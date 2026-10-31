@@ -78,5 +78,13 @@
     "icon": "🛷",
     "description": "Race down snowy hills and dodge obstacles.",
     "iframe": "https://the-pizza-editionfree.github.io/lesson302/lesson-139"
+  },
+  {
+    "id": "bitlife",
+    "title": "BitLife",
+    "category": "arcade",
+    "icon": "🎭",
+    "description": "Make life choices and see how your character's story unfolds.",
+    "iframe": "https://the-pizza-editionfree.github.io/lesson302/lesson-4"
   }
 ]
