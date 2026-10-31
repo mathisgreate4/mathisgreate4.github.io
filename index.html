@@ -49,10 +49,8 @@ header{background:#171a20!important;backdrop-filter:none;border-bottom:1px solid
 <article class="card"><div class="emoji">🐍</div><div class="tag">Arcade classic</div><h3>Neon Snake</h3><p>Eat the dots, grow longer, and try not to crash.</p><button class="btn" onclick="openGame('snake')">Play now ↗</button></article>
 <article class="card"><div class="emoji">🧠</div><div class="tag">Brain training</div><h3>Memory Match</h3><p>Flip the cards and find all matching pairs.</p><button class="btn" onclick="openGame('memory')">Play now ↗</button></article>
 <article class="card"><div class="emoji">🔢</div><div class="tag">Number puzzle</div><h3>2048</h3><p>Combine matching tiles to reach 2048.</p><button class="btn" onclick="openGame('2048')">Play now ↗</button></article>
-<article class="card"><div class="emoji">🏈</div><div class="tag">Football</div><h3>Retro Bowl</h3><p>Manage your team and lead them to a championship.</p><button class="btn" onclick="openRetroBowl()">Play Retro Bowl</button></article>
 </div>
 
-<div class="gamebox" id="retrobowlbox"><div class="gamebar"><h3>🏈 Retro Bowl</h3><div><a class="btn" href="https://arceus.github.io/retro123/" target="_blank" rel="noopener">Open game ↗</a> <button class="btn" onclick="closeRetroBowl()">Close ✕</button></div></div><iframe id="retrobowlframe" title="Retro Bowl game" src="about:blank" allow="fullscreen; autoplay; gamepad" allowfullscreen loading="lazy" style="display:block;width:100%;height:min(78vh,800px);min-height:500px;border:0;border-radius:12px;background:#000;margin-top:14px"></iframe><p class="note">The game is loaded from the project’s published game page. If the publisher blocks embedding, use “Open game” above.</p></div>
 
 <div class="gamebox" id="gamebox"><div class="gamebar"><h3 id="gametitle">Game</h3><button class="btn" onclick="closeGame()">Close ✕</button></div><div id="gamearea"></div><p class="note" id="gamehint"></p></div>
 </section>
@@ -73,8 +71,6 @@ header{background:#171a20!important;backdrop-filter:none;border-bottom:1px solid
 <script>
 
 const box=document.getElementById('gamebox'),area=document.getElementById('gamearea');
-function openRetroBowl(){const b=document.getElementById('retrobowlbox');b.classList.add('show');document.getElementById('retrobowlframe').src='https://arceus.github.io/retro123/';b.scrollIntoView({behavior:'smooth',block:'start'})}
-function closeRetroBowl(){document.getElementById('retrobowlbox').classList.remove('show');document.getElementById('retrobowlframe').src='about:blank'}
 function openGame(name){box.classList.add('show');document.getElementById('gametitle').textContent=({snake:'🐍 Neon Snake',memory:'🧠 Memory Match','2048':'🔢 2048'})[name];area.innerHTML='';if(name==='snake')snake();if(name==='memory')memory();if(name==='2048')game2048();box.scrollIntoView({behavior:'smooth',block:'center'});}
 function closeGame(){box.classList.remove('show');area.innerHTML='';}
 document.getElementById('appsearch').addEventListener('input',e=>{const q=e.target.value.toLowerCase();document.querySelectorAll('.appcard').forEach(c=>c.style.display=c.innerText.toLowerCase().includes(q)?'':'none')});
