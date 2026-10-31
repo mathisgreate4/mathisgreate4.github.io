@@ -22,5 +22,13 @@
     "icon": "⛏️",
     "description": "Build in a classic block world.",
     "iframe": "https://classic.minecraft.net/"
+  },
+  {
+    "id": "neon-roll",
+    "title": "Neon Roll",
+    "category": "arcade",
+    "icon": "🔮",
+    "description": "Dodge neon obstacles in an original Slope-style arcade runner.",
+    "iframe": "games/neon-roll/"
   }
 ]
