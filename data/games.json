@@ -70,5 +70,13 @@
     "icon": "🐵",
     "description": "Run your own supermarket and keep customers happy.",
     "iframe": "https://the-pizza-editionfree.github.io/lesson302/lesson-133"
+  },
+  {
+    "id": "snow-rider-3d",
+    "title": "Snow Rider 3D",
+    "category": "racing",
+    "icon": "🛷",
+    "description": "Race down snowy hills and dodge obstacles.",
+    "iframe": "https://the-pizza-editionfree.github.io/lesson302/lesson-139"
   }
 ]
