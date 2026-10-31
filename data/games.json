@@ -22,13 +22,5 @@
     "icon": "⛏️",
     "description": "Build in a classic block world.",
     "iframe": "https://classic.minecraft.net/"
-  },
-  {
-    "id": "bitlife",
-    "title": "BitLife",
-    "category": "simulation",
-    "icon": "📱",
-    "description": "Make choices and shape a virtual life.",
-    "iframe": "/games/bit-life/"
   }
 ]
