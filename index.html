@@ -14,6 +14,13 @@ section{padding:26px 0 42px;scroll-margin-top:85px}.section-head{display:flex;al
 .toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 16px}.search{flex:1;min-width:190px;background:#101426;border:1px solid var(--line);border-radius:12px;padding:11px 14px;color:var(--text);font:inherit;outline:none}.search:focus{border-color:var(--cyan)}
 .gamebox{display:none;margin-top:16px;padding:20px;background:#0c1020;border:1px solid var(--line);border-radius:18px}.gamebox.show{display:block}.gamebar{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}.gamecanvas{display:block;margin:16px auto 0;max-width:100%;background:#080d19;border:1px solid #26304c;border-radius:12px;touch-action:manipulation}.gamecontrols{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:12px}.gamecontrols button{background:#202844;color:white;border:1px solid #3b496c;border-radius:9px;padding:9px 14px;cursor:pointer}.note{color:var(--muted);font-size:.88rem}
 
+#fb-overlay{display:none;position:fixed;inset:0;z-index:1000;background:#090b10;padding:10px}
+#fb-overlay.open{display:flex;flex-direction:column}
+#fb-overlay .fb-toolbar{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:4px 2px 12px;flex-wrap:wrap}
+#fb-overlay .fb-actions{display:flex;gap:8px;flex-wrap:wrap}
+#fb-overlay iframe{display:block;flex:1;width:100%;min-height:0;border:0;border-radius:8px;background:#000}
+@media(max-width:600px){#fb-overlay{padding:6px}#fb-overlay .fb-toolbar{align-items:flex-start}}
+
 footer{border-top:1px solid #ffffff12;padding:25px 0 38px;color:var(--muted);font-size:.85rem}
 @media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:48px}.orb{height:190px}.grid{grid-template-columns:repeat(2,1fr)}.navlinks{gap:12px;font-size:.82rem}}@media(max-width:490px){.grid{grid-template-columns:1fr}.navlinks a:nth-child(3){display:none}.nav{height:62px}}
 
@@ -51,6 +58,7 @@ header{background:#171a20!important;backdrop-filter:none;border-bottom:1px solid
 <article class="card"><div class="emoji">🧠</div><div class="tag">Brain training</div><h3>Memory Match</h3><p>Flip the cards and find all matching pairs.</p><button class="btn" onclick="openGame('memory')">Play now ↗</button></article>
 <article class="card"><div class="emoji">🔢</div><div class="tag">Number puzzle</div><h3>2048</h3><p>Combine matching tiles to reach 2048.</p><button class="btn" onclick="openGame('2048')">Play now ↗</button></article>
 </div>
+<article class="card" style="margin-top:15px"><div class="emoji">🏈</div><div class="tag">Sports arcade</div><h3>Football Bros</h3><p>Pick a play, dodge defenders, and score touchdowns. Use WASD or arrow keys; Spacebar performs the action.</p><button class="btn" onclick="openFootballBros()">Play full screen ↗</button></article>
 <div class="gamebox" id="gamebox"><div class="gamebar"><h3 id="gametitle">Game</h3><button class="btn" onclick="closeGame()">Close ✕</button></div><div id="gamearea"></div><p class="note" id="gamehint"></p></div>
 </section>
 <section id="watch"><div class="section-head"><div><div class="eyebrow">Lights, camera, explore</div><h2>🍿 Movie corner</h2><p>Find trailers and free, legal streaming catalogs.</p></div></div><div class="grid">
@@ -67,8 +75,14 @@ header{background:#171a20!important;backdrop-filter:none;border-bottom:1px solid
 <a class="card appcard" href="https://typing.com/" target="_blank" rel="noopener"><div class="emoji">⌨️</div><div class="tag">Practice</div><h3>Typing.com</h3><p>Build typing speed and accuracy.</p><span class="tag">Open app ↗</span></a>
 </div></section>
 
+<div id="fb-overlay" role="dialog" aria-label="Football Bros game player"><div class="fb-toolbar"><strong>🏈 Football Bros</strong><div class="fb-actions"><button class="btn" onclick="fullscreenFootballBros()">⛶ Fullscreen</button><a class="btn" href="https://footballbros.io/" target="_blank" rel="noopener">Open separately ↗</a><button class="btn" onclick="closeFootballBros()">Close ✕</button></div></div><iframe id="fb-frame" src="about:blank" title="Football Bros game" allow="fullscreen; autoplay; gamepad" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
 </main><footer><div class="wrap">© 2026 mathisgreate4 · Built for fun, creativity, and learning. Use sites in line with your school’s rules.</div></footer>
 <script>
+
+function openFootballBros(){const overlay=document.getElementById('fb-overlay'),frame=document.getElementById('fb-frame');overlay.classList.add('open');if(frame.src==='about:blank')frame.src='https://footballbros.io/';document.body.style.overflow='hidden';}
+function closeFootballBros(){document.getElementById('fb-overlay').classList.remove('open');document.body.style.overflow='';}
+async function fullscreenFootballBros(){const frame=document.getElementById('fb-frame');try{if(frame.requestFullscreen)await frame.requestFullscreen();else if(frame.webkitRequestFullscreen)frame.webkitRequestFullscreen();}catch(e){alert('Fullscreen was blocked by the browser or game site. Use “Open separately” and press F11.');}}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeFootballBros()});
 
 const box=document.getElementById('gamebox'),area=document.getElementById('gamearea');
 function openGame(name){box.classList.add('show');document.getElementById('gametitle').textContent=({snake:'🐍 Neon Snake',memory:'🧠 Memory Match','2048':'🔢 2048'})[name];area.innerHTML='';if(name==='snake')snake();if(name==='memory')memory();if(name==='2048')game2048();box.scrollIntoView({behavior:'smooth',block:'center'});}
