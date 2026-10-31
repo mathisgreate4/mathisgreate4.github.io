@@ -1,0 +1,50 @@
+[
+  {
+    "id": "football-bros",
+    "title": "Football Bros",
+    "category": "sports",
+    "icon": "🏈",
+    "description": "Fast arcade-style football action.",
+    "iframe": "https://footballbros.io/"
+  },
+  {
+    "id": "slow-roads",
+    "title": "Slow Roads",
+    "category": "racing",
+    "icon": "🚗",
+    "description": "Relaxed endless-road driving.",
+    "iframe": "https://slowroads.io/"
+  },
+  {
+    "id": "minecraft-classic",
+    "title": "Minecraft Classic",
+    "category": "worlds",
+    "icon": "⛏️",
+    "description": "Build in a classic block world.",
+    "iframe": "https://classic.minecraft.net/"
+  },
+  {
+    "id": "poki-puzzle",
+    "title": "Puzzle Games",
+    "category": "puzzle",
+    "icon": "🧩",
+    "description": "Browse a collection of brain teasers.",
+    "iframe": "https://poki.com/en/puzzle"
+  },
+  {
+    "id": "itch-arcade",
+    "title": "HTML5 Arcade",
+    "category": "arcade",
+    "icon": "🕹️",
+    "description": "Discover browser arcade games.",
+    "iframe": "https://itch.io/games/html5/tag-arcade"
+  },
+  {
+    "id": "retro-bowl-poki",
+    "title": "Retro Bowl",
+    "category": "sports",
+    "icon": "🏆",
+    "description": "Retro-style American football.",
+    "iframe": "https://poki.com/en/g/retro-bowl"
+  }
+]
