@@ -142,5 +142,13 @@
     "icon": "💥",
     "description": "Battle through more tank levels, enemies, and upgrades.",
     "iframe": "https://77pen.github.io/p/awesome-tanks-2"
+  },
+  {
+    "id": "chicken-merge",
+    "title": "Chicken Merge",
+    "category": "puzzle",
+    "icon": "🐔",
+    "description": "Merge chickens to create new and bigger birds.",
+    "iframe": "https://labgstore311.github.io/g9/class-641/"
   }
 ]
