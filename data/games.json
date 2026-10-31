@@ -166,5 +166,13 @@
     "icon": "🏹",
     "description": "Aim your bow, outshoot your opponent, and win the archery duel.",
     "iframe": "https://play.gamepix.com/two-archers-bow-duel/embed?sid=7378M"
+  },
+  {
+    "id": "moto-x3m",
+    "title": "Moto X3M",
+    "category": "racing",
+    "icon": "🏍️",
+    "description": "Race your dirt bike through wild obstacle courses and stunts.",
+    "iframe": "https://play.famobi.com/moto-x3m/A-FAK0S"
   }
 ]
