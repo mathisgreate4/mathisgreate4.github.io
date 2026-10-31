@@ -150,5 +150,13 @@
     "icon": "🐔",
     "description": "Merge chickens to create new and bigger birds.",
     "iframe": "https://labgstore311.github.io/g9/class-641/"
+  },
+  {
+    "id": "super-liquid-soccer",
+    "title": "Super Liquid Soccer",
+    "category": "sports",
+    "icon": "⚽",
+    "description": "Play fast-paced soccer matches with fluid, arcade-style action.",
+    "iframe": "https://the-pizza-editionfree.github.io/lesson302/lesson-50"
   }
 ]
