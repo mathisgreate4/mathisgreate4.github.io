@@ -38,13 +38,5 @@
     "icon": "🕹️",
     "description": "Discover browser arcade games.",
     "iframe": "https://itch.io/games/html5/tag-arcade"
-  },
-  {
-    "id": "retro-bowl-poki",
-    "title": "Retro Bowl",
-    "category": "sports",
-    "icon": "🏆",
-    "description": "Retro-style American football.",
-    "iframe": "https://poki.com/en/g/retro-bowl"
   }
 ]
