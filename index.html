@@ -18,7 +18,27 @@ footer{border-top:1px solid #ffffff12;padding:25px 0 38px;color:var(--muted);fon
 
 #gn-library{margin-top:22px}#gn-library .toolbar{margin-top:14px}#gn-games{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}#gn-games a{background:#141b30;border:1px solid #293653;border-radius:12px;padding:12px;min-width:0;transition:.18s}#gn-games a:hover{border-color:var(--cyan);transform:translateY(-2px)}#gn-games b{display:block;font-size:.92rem;line-height:1.3}#gn-games small{display:block;color:var(--cyan);margin-top:5px;font-size:.72rem;text-transform:uppercase;letter-spacing:.7px}#gn-count{color:var(--muted);font-size:.85rem}@media(max-width:760px){#gn-games{grid-template-columns:repeat(2,minmax(0,1fr))}}
 #gn-library .gn-categories{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 18px}#gn-library .gn-categories button{background:#141b30;color:#dce7ff;border:1px solid #293653;border-radius:999px;padding:8px 13px;font-weight:700;cursor:pointer}#gn-library .gn-categories button.active,#gn-library .gn-categories button:hover{background:#123b48;border-color:var(--cyan);color:#fff}#gn-library .toolbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap}#gn-library .toolbar input{flex:1;min-width:220px}
-#gn-player{display:none;margin:18px 0;padding:14px;background:#090e1c;border:1px solid #263653;border-radius:18px}#gn-player.open{display:block}#gn-player .player-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}#gn-player iframe{display:block;width:100%;height:min(72vh,760px);min-height:420px;border:0;border-radius:12px;background:#000}#gn-player .player-actions{display:flex;gap:8px;flex-wrap:wrap}#gn-games button{width:100%;text-align:left;cursor:pointer;color:inherit;font:inherit}#gn-games button b,#gn-games button small{display:block}#gn-games button small{margin-top:5px;color:#9aabc9;font-size:.78rem}#gn-games button:hover{border-color:var(--cyan);transform:translateY(-2px)}@media(max-width:600px){#gn-player iframe{min-height:55vh;height:65vh}}</style>
+#gn-player{display:none;margin:18px 0;padding:14px;background:#090e1c;border:1px solid #263653;border-radius:18px}#gn-player.open{display:block}#gn-player .player-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}#gn-player iframe{display:block;width:100%;height:min(72vh,760px);min-height:420px;border:0;border-radius:12px;background:#000}#gn-player .player-actions{display:flex;gap:8px;flex-wrap:wrap}#gn-games button{width:100%;text-align:left;cursor:pointer;color:inherit;font:inherit}#gn-games button b,#gn-games button small{display:block}#gn-games button small{margin-top:5px;color:#9aabc9;font-size:.78rem}#gn-games button:hover{border-color:var(--cyan);transform:translateY(-2px)}@media(max-width:600px){#gn-player iframe{min-height:55vh;height:65vh}}
+/* Clean, non-neon theme */
+:root{--bg:#111318;--panel:#1b1f26;--panel2:#242a33;--text:#f1f3f5;--muted:#aab2bd;--cyan:#9db7d1;--pink:#9db7d1;--purple:#9db7d1;--line:#343b46}
+body{background:#111318!important;color:var(--text)}
+header{background:#171a20!important;backdrop-filter:none;border-bottom:1px solid #343b46}
+.brand span,.navlinks a:hover,.eyebrow,.tag,#gn-games small{color:#b8c8d8!important;text-shadow:none!important}
+.gradient{background:none!important;color:#f1f3f5!important}
+.btn.primary{background:#344252!important;color:#fff!important;border:1px solid #53677d!important;box-shadow:none!important}
+.orb{background:#20252d!important;border:1px solid #3a424d!important}
+.orb:before,.orb:after{display:none!important}
+.orb strong{filter:none!important;color:#c5d0dc}
+.card{background:#1b1f26!important;border:1px solid #343b46!important;box-shadow:none!important}
+.card:hover{transform:translateY(-2px);border-color:#72869b!important;box-shadow:none!important}
+.search,.gamebox,.gamecanvas,#gn-player{background:#191d23!important;border-color:#343b46!important}
+.gamecanvas{background:#111318!important}
+.gamecontrols button,#gn-library .gn-categories button{background:#252b33!important;color:#e4e8ed!important;border-color:#424b57!important}
+#gn-library .gn-categories button.active,#gn-library .gn-categories button:hover{background:#3b4857!important;border-color:#8297ad!important;color:#fff!important}
+#gn-games button{background:#1b1f26!important;border-color:#343b46!important}
+#gn-games button:hover{border-color:#8297ad!important;transform:translateY(-1px)}
+#gn-games small{color:#aab2bd!important}
+</style>
 </head>
 <body>
 <header><div class="wrap nav"><a class="brand" href="#"><span>math</span>isgreate4</a><nav class="navlinks"><a href="#games">Games</a><a href="#watch">Watch</a><a href="#apps">Apps</a></nav></div></header>
