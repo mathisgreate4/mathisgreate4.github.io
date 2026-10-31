@@ -118,5 +118,13 @@
     "icon": "🐷",
     "description": "Fight off waves of enemies as a quick-footed pig hero.",
     "iframe": "https://the-pizza-editionfree.github.io/lesson302/lesson-14"
+  },
+  {
+    "id": "dunkers-2",
+    "title": "Dunkers 2",
+    "category": "sports",
+    "icon": "🏀",
+    "description": "Play arcade basketball and battle for the winning shot.",
+    "iframe": "https://the-pizza-editionfree.github.io/lesson306/lesson-242"
   }
 ]
