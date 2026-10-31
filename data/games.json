@@ -126,5 +126,13 @@
     "icon": "🐱",
     "description": "Take on waves of zombies in this action-packed cat shooter.",
     "iframe": "https://the-pizza-editionfree.github.io/lesson302/lesson-62"
+  },
+  {
+    "id": "awesome-tanks",
+    "title": "Awesome Tanks",
+    "category": "arcade",
+    "icon": "🛡️",
+    "description": "Drive your tank, blast enemies, and upgrade your firepower.",
+    "iframe": "https://77pen.github.io/p/awesome-tanks"
   }
 ]
