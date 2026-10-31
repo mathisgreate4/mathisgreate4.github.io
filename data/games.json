@@ -94,5 +94,13 @@
     "icon": "🚇",
     "description": "Dash through the subway, dodge trains, and collect coins in New York.",
     "iframe": "https://the-pizza-editionfree.github.io/lesson302/lesson-143"
+  },
+  {
+    "id": "basket-bros",
+    "title": "Basket Bros",
+    "category": "sports",
+    "icon": "🏀",
+    "description": "Play fast-paced arcade basketball and take on opponents.",
+    "iframe": "https://the-pizza-editionfree.github.io/lesson302/lesson-108"
   }
 ]
