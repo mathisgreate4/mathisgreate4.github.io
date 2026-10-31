@@ -62,5 +62,13 @@
     "icon": "🎯",
     "description": "Build, aim, and compete in fast online matches.",
     "iframe": "https://1v1.lol/"
+  },
+  {
+    "id": "monkey-mart",
+    "title": "Monkey Mart",
+    "category": "arcade",
+    "icon": "🐵",
+    "description": "Run your own supermarket and keep customers happy.",
+    "iframe": "https://the-pizza-editionfree.github.io/lesson302/lesson-133"
   }
 ]
