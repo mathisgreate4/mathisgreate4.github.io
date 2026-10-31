@@ -134,5 +134,13 @@
     "icon": "🛡️",
     "description": "Drive your tank, blast enemies, and upgrade your firepower.",
     "iframe": "https://77pen.github.io/p/awesome-tanks"
+  },
+  {
+    "id": "awesome-tanks-2",
+    "title": "Awesome Tanks 2",
+    "category": "arcade",
+    "icon": "💥",
+    "description": "Battle through more tank levels, enemies, and upgrades.",
+    "iframe": "https://77pen.github.io/p/awesome-tanks-2"
   }
 ]
