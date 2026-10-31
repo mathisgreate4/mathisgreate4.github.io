@@ -30,5 +30,29 @@
     "icon": "🔮",
     "description": "Dodge neon obstacles in an original Slope-style arcade runner.",
     "iframe": "games/neon-roll/"
+  },
+  {
+    "id": "slope",
+    "title": "Slope",
+    "category": "arcade",
+    "icon": "🟢",
+    "description": "Race down a twisting neon course and avoid the obstacles.",
+    "iframe": "https://slope-game.github.io/"
+  },
+  {
+    "id": "run-3",
+    "title": "Run 3",
+    "category": "arcade",
+    "icon": "🏃",
+    "description": "Run through space tunnels and keep your footing.",
+    "iframe": "https://run3.io/"
+  },
+  {
+    "id": "1v1-lol",
+    "title": "1v1.LOL",
+    "category": "sports",
+    "icon": "🎯",
+    "description": "Build, aim, and compete in fast online matches.",
+    "iframe": "https://1v1.lol/"
   }
 ]
