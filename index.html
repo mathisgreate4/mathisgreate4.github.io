@@ -1,151 +1,70 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#090b16"><meta name="description" content="Mathisgreate4 — games, movies, and useful apps in one neon arcade hub.">
-<title>mathisgreate4 — Play • Watch • Explore</title>
-<style>
-:root{--bg:#090b16;--panel:#121629;--panel2:#191f36;--text:#f5f7ff;--muted:#a5aec9;--cyan:#45e6ff;--pink:#ff4fd8;--purple:#9a7bff;--line:#29314d}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 15% -10%,#25245a 0,transparent 42%),radial-gradient(ellipse at 95% 15%,#15364b 0,transparent 30%),var(--bg);color:var(--text);font:16px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh}
-a{color:inherit;text-decoration:none}.wrap{width:min(1160px,calc(100% - 36px));margin:auto}
-header{position:sticky;top:0;z-index:10;background:#090b16df;backdrop-filter:blur(16px);border-bottom:1px solid #ffffff12}.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-weight:950;letter-spacing:-1px;font-size:1.3rem}.brand span{color:var(--cyan);text-shadow:0 0 18px #45e6ff88}.navlinks{display:flex;gap:22px;color:var(--muted);font-size:.93rem}.navlinks a:hover{color:var(--cyan)}
-.hero{padding:72px 0 44px;display:grid;grid-template-columns:1.3fr .7fr;align-items:center;gap:30px}.eyebrow{color:var(--cyan);font-size:.78rem;font-weight:850;letter-spacing:2px;text-transform:uppercase}.hero h1{font-size:clamp(2.7rem,7vw,5.6rem);line-height:.98;letter-spacing:-.065em;margin:14px 0 18px}.gradient{background:linear-gradient(90deg,var(--cyan),#a99aff 55%,var(--pink));background-clip:text;color:transparent}.hero p{max-width:590px;color:var(--muted);font-size:1.08rem}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}.btn{border:1px solid var(--line);background:var(--panel2);padding:11px 17px;border-radius:12px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;cursor:pointer}.btn.primary{background:linear-gradient(100deg,#2bcde8,#8c73ff);border:0;color:#080b18;box-shadow:0 8px 28px #5c8cff33}.orb{height:270px;border-radius:32px;border:1px solid #ffffff18;background:linear-gradient(145deg,#1b2850,#151329 60%,#321b43);display:grid;place-items:center;position:relative;overflow:hidden}.orb:before,.orb:after{content:"";position:absolute;border:1px solid #7eeeff55;border-radius:50%;width:220px;height:220px;transform:rotateX(65deg)}.orb:after{width:310px;height:310px;border-color:#ff65dd55}.orb strong{font-size:5rem;filter:drop-shadow(0 0 25px #45e6ff);z-index:1}
-section{padding:26px 0 42px;scroll-margin-top:85px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:15px;margin-bottom:18px}.section-head h2{font-size:1.7rem;letter-spacing:-.04em;margin:0}.section-head p{color:var(--muted);margin:3px 0 0}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.card{background:linear-gradient(145deg,#171d33,#101426);border:1px solid var(--line);border-radius:18px;padding:20px;min-height:170px;transition:.2s}.card:hover{transform:translateY(-3px);border-color:#45e6ff88;box-shadow:0 12px 30px #0005}.emoji{font-size:1.8rem}.card h3{margin:9px 0 4px}.card p{margin:0 0 14px;color:var(--muted);font-size:.92rem}.tag{font-size:.72rem;color:var(--cyan);font-weight:850;letter-spacing:1px;text-transform:uppercase}.card .btn{padding:8px 12px;font-size:.86rem}
-.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 16px}.search{flex:1;min-width:190px;background:#101426;border:1px solid var(--line);border-radius:12px;padding:11px 14px;color:var(--text);font:inherit;outline:none}.search:focus{border-color:var(--cyan)}
-.gamebox{display:none;margin-top:16px;padding:20px;background:#0c1020;border:1px solid var(--line);border-radius:18px}.gamebox.show{display:block}.gamebar{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}.gamecanvas{display:block;margin:16px auto 0;max-width:100%;background:#080d19;border:1px solid #26304c;border-radius:12px;touch-action:manipulation}.gamecontrols{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:12px}.gamecontrols button{background:#202844;color:white;border:1px solid #3b496c;border-radius:9px;padding:9px 14px;cursor:pointer}.note{color:var(--muted);font-size:.88rem}
-
-#fb-overlay{display:none;position:fixed;inset:0;z-index:1000;background:#090b10;padding:10px}
-#fb-overlay.open{display:flex;flex-direction:column}
-#fb-overlay .fb-toolbar{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:4px 2px 12px;flex-wrap:wrap}
-#fb-overlay .fb-actions{display:flex;gap:8px;flex-wrap:wrap}
-#fb-overlay iframe{display:block;flex:1;width:100%;min-height:0;border:0;border-radius:8px;background:#000}
-@media(max-width:600px){#fb-overlay{padding:6px}#fb-overlay .fb-toolbar{align-items:flex-start}}
-
-footer{border-top:1px solid #ffffff12;padding:25px 0 38px;color:var(--muted);font-size:.85rem}
-@media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:48px}.orb{height:190px}.grid{grid-template-columns:repeat(2,1fr)}.navlinks{gap:12px;font-size:.82rem}}@media(max-width:490px){.grid{grid-template-columns:1fr}.navlinks a:nth-child(3){display:none}.nav{height:62px}}
-
-#gn-library{margin-top:22px}#gn-library .toolbar{margin-top:14px}#gn-games{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}#gn-games a{background:#141b30;border:1px solid #293653;border-radius:12px;padding:12px;min-width:0;transition:.18s}#gn-games a:hover{border-color:var(--cyan);transform:translateY(-2px)}#gn-games b{display:block;font-size:.92rem;line-height:1.3}#gn-games small{display:block;color:var(--cyan);margin-top:5px;font-size:.72rem;text-transform:uppercase;letter-spacing:.7px}#gn-count{color:var(--muted);font-size:.85rem}@media(max-width:760px){#gn-games{grid-template-columns:repeat(2,minmax(0,1fr))}}
-#gn-library .gn-categories{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 18px}#gn-library .gn-categories button{background:#141b30;color:#dce7ff;border:1px solid #293653;border-radius:999px;padding:8px 13px;font-weight:700;cursor:pointer}#gn-library .gn-categories button.active,#gn-library .gn-categories button:hover{background:#123b48;border-color:var(--cyan);color:#fff}#gn-library .toolbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap}#gn-library .toolbar input{flex:1;min-width:220px}
-#gn-player{display:none;margin:18px 0;padding:14px;background:#090e1c;border:1px solid #263653;border-radius:18px}#gn-player.open{display:block}#gn-player .player-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}#gn-player iframe{display:block;width:100%;height:min(72vh,760px);min-height:420px;border:0;border-radius:12px;background:#000}#gn-player .player-actions{display:flex;gap:8px;flex-wrap:wrap}#gn-games button{width:100%;text-align:left;cursor:pointer;color:inherit;font:inherit}#gn-games button b,#gn-games button small{display:block}#gn-games button small{margin-top:5px;color:#9aabc9;font-size:.78rem}#gn-games button:hover{border-color:var(--cyan);transform:translateY(-2px)}@media(max-width:600px){#gn-player iframe{min-height:55vh;height:65vh}}
-/* Clean, non-neon theme */
-:root{--bg:#111318;--panel:#1b1f26;--panel2:#242a33;--text:#f1f3f5;--muted:#aab2bd;--cyan:#9db7d1;--pink:#9db7d1;--purple:#9db7d1;--line:#343b46}
-body{background:#111318!important;color:var(--text)}
-header{background:#171a20!important;backdrop-filter:none;border-bottom:1px solid #343b46}
-.brand span,.navlinks a:hover,.eyebrow,.tag,#gn-games small{color:#b8c8d8!important;text-shadow:none!important}
-.gradient{background:none!important;color:#f1f3f5!important}
-.btn.primary{background:#344252!important;color:#fff!important;border:1px solid #53677d!important;box-shadow:none!important}
-.orb{background:#20252d!important;border:1px solid #3a424d!important}
-.orb:before,.orb:after{display:none!important}
-.orb strong{filter:none!important;color:#c5d0dc}
-.card{background:#1b1f26!important;border:1px solid #343b46!important;box-shadow:none!important}
-.card:hover{transform:translateY(-2px);border-color:#72869b!important;box-shadow:none!important}
-.search,.gamebox,.gamecanvas,#gn-player{background:#191d23!important;border-color:#343b46!important}
-.gamecanvas{background:#111318!important}
-.gamecontrols button,#gn-library .gn-categories button{background:#252b33!important;color:#e4e8ed!important;border-color:#424b57!important}
-#gn-library .gn-categories button.active,#gn-library .gn-categories button:hover{background:#3b4857!important;border-color:#8297ad!important;color:#fff!important}
-#gn-games button{background:#1b1f26!important;border-color:#343b46!important}
-#gn-games button:hover{border-color:#8297ad!important;transform:translateY(-1px)}
-#gn-games small{color:#aab2bd!important}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10131c">
+  <meta name="description" content="Matheise4 — a clean place to play browser games.">
+  <title>Matheise4 — Game Hub</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
 </head>
 <body>
-<header><div class="wrap nav"><a class="brand" href="#"><span>math</span>isgreate4</a><nav class="navlinks"><a href="#games">Games</a><a href="#strategy">Strategy</a><a href="#watch">Watch</a><a href="#apps">Apps</a></nav></div></header>
-<main class="wrap">
-<div class="hero"><div><div class="eyebrow">✦ Your all-in-one digital hangout</div><h1>Level up your<br><span class="gradient">free time.</span></h1><p>Jump into quick games, discover movie trailers, and open useful creative tools — all from one clean, neon-powered hub.</p><div class="actions"><a class="btn primary" href="#games">🎮 Play games</a><a class="btn" href="#watch">▶ Explore movies</a></div></div><div class="orb" aria-label="Neon arcade graphic"><strong>✦</strong></div></div>
-<section id="games"><div class="section-head"><div><div class="eyebrow">Pick your challenge</div><h2>🎮 Game zone</h2><p>Quick games that run right here in your browser.</p></div></div>
-<div class="grid">
-<article class="card"><div class="emoji">🐍</div><div class="tag">Arcade classic</div><h3>Neon Snake</h3><p>Eat the dots, grow longer, and try not to crash.</p><button class="btn" onclick="openGame('snake')">Play now ↗</button></article>
-<article class="card"><div class="emoji">🧠</div><div class="tag">Brain training</div><h3>Memory Match</h3><p>Flip the cards and find all matching pairs.</p><button class="btn" onclick="openGame('memory')">Play now ↗</button></article>
-<article class="card"><div class="emoji">🔢</div><div class="tag">Number puzzle</div><h3>2048</h3><p>Combine matching tiles to reach 2048.</p><button class="btn" onclick="openGame('2048')">Play now ↗</button></article>
-</div>
-<article class="card" style="margin-top:15px"><div class="emoji">🏈</div><div class="tag">Sports arcade</div><h3>Football Bros</h3><p>Pick a play, dodge defenders, and score touchdowns. Use WASD or arrow keys; Spacebar performs the action.</p><button class="btn" onclick="openFootballBros()">Play full screen ↗</button></article>
-<div class="gamebox" id="gamebox"><div class="gamebar"><h3 id="gametitle">Game</h3><button class="btn" onclick="closeGame()">Close ✕</button></div><div id="gamearea"></div><p class="note" id="gamehint"></p></div>
-</section>
-
-
-<section id="gn-library">
-  <div class="section-head"><div><div class="eyebrow">More ways to play</div><h2>🕹️ Ultimate game library</h2><p>Sports, 3D worlds, runners, puzzles, shooters and arcade favorites.</p></div><span id="gn-count">12 games</span></div>
-  <div class="gn-categories" id="gn-categories">
-    <button class="active" data-filter="all">All games</button><button data-filter="sports">Sports</button><button data-filter="racing">Racing</button><button data-filter="3d">3D & worlds</button><button data-filter="runner">Runners</button><button data-filter="shooter">Shooters</button><button data-filter="puzzle">Puzzle</button><button data-filter="arcade">Arcade</button>
-  </div>
-  <div class="toolbar"><input class="search" id="gn-search" placeholder="Search games..." aria-label="Search games"></div>
-  <div id="gn-games">
-    <button class="gn-game" data-category="sports" data-title="Football Bros" data-url="https://footballbros.io/"><span>🏈</span><b>Football Bros</b><small>Sports · Football</small></button>
-    <button class="gn-game" data-category="racing" data-title="Slow Roads" data-url="https://slowroads.io/"><span>🚗</span><b>Slow Roads</b><small>Racing · Driving</small></button>
-    <button class="gn-game" data-category="3d" data-title="Minecraft Classic" data-url="https://classic.minecraft.net/"><span>⛏️</span><b>Minecraft Classic</b><small>3D · Building</small></button>
-    <button class="gn-game" data-category="puzzle" data-title="2048" data-local="2048"><span>🔢</span><b>2048</b><small>Puzzle · Numbers</small></button>
-    <button class="gn-game" data-category="puzzle" data-title="Puzzle Games" data-url="https://poki.com/en/puzzle"><span>🧩</span><b>Puzzle Games</b><small>Puzzle · Brain</small></button>
-    <button class="gn-game" data-category="arcade" data-title="Arcade Games" data-url="https://itch.io/games/html5/tag-arcade"><span>🕹️</span><b>Arcade Games</b><small>Arcade · Collection</small></button>
-  </div>
-  <div id="gn-player" aria-label="Game player"><div class="player-head"><strong id="gn-player-title">Game</strong><div class="player-actions"><button class="btn" id="gn-fullscreen">⛶ Fullscreen</button><button class="btn" id="gn-open-tab">Open in new tab ↗</button><button class="btn" id="gn-close">Close ✕</button></div></div><iframe id="gn-frame" title="Selected game" src="about:blank" allow="fullscreen; autoplay; gamepad; clipboard-read; clipboard-write" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe><p class="note" id="gn-player-note">If a game does not load here, use “Open in new tab”. Retro Bowl is linked to its official Poki version. If Poki blocks the in-page player, choose “Open in new tab”.</p></div>
-</section>
-<style>
-#gn-library .gn-categories{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 18px}
-#gn-library .gn-categories button{background:#252b33;color:#e4e8ed;border:1px solid #424b57;border-radius:999px;padding:8px 13px;font-weight:700;cursor:pointer}
-#gn-library .gn-categories button.active,#gn-library .gn-categories button:hover{background:#3b4857;border-color:#8297ad;color:#fff}
-#gn-games{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
-#gn-games .gn-game{background:#1b1f26;border:1px solid #343b46;border-radius:14px;padding:15px;text-align:left;min-height:112px;cursor:pointer;color:inherit;font:inherit;transition:.18s}
-#gn-games .gn-game:hover{border-color:#8297ad;transform:translateY(-2px)}
-#gn-games .gn-game>span{display:block;font-size:1.45rem;margin-bottom:7px}
-#gn-games .gn-game b{display:block;font-size:.95rem}
-#gn-games .gn-game small{display:block;color:#aab2bd;margin-top:5px;font-size:.76rem}
-#gn-player{display:none;margin:18px 0;padding:14px;background:#191d23;border:1px solid #343b46;border-radius:18px}
-#gn-player.open{display:block}
-#gn-player .player-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:12px}
-#gn-player iframe{display:block;width:100%;height:min(72vh,760px);min-height:420px;border:0;border-radius:12px;background:#000}
-#gn-player .player-actions{display:flex;gap:8px;flex-wrap:wrap}
-@media(max-width:760px){#gn-games{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:600px){#gn-player iframe{min-height:55vh;height:65vh}}
-</style>
-
-<section id="watch"><div class="section-head"><div><div class="eyebrow">Lights, camera, explore</div><h2>🍿 Movie corner</h2><p>Find trailers and free, legal streaming catalogs.</p></div></div><div class="grid">
-<a class="card" href="https://www.youtube.com/feed/trending" target="_blank" rel="noopener"><div class="emoji">🎬</div><div class="tag">Trailers & clips</div><h3>YouTube</h3><p>Explore official movie trailers, clips, and channels.</p><span class="tag">Open YouTube ↗</span></a>
-<a class="card" href="https://www.pluto.tv/" target="_blank" rel="noopener"><div class="emoji">📺</div><div class="tag">Free streaming</div><h3>Pluto TV</h3><p>Browse free ad-supported live channels and on-demand titles.</p><span class="tag">Visit Pluto TV ↗</span></a>
-<a class="card" href="https://www.tubitv.com/" target="_blank" rel="noopener"><div class="emoji">🍿</div><div class="tag">Free streaming</div><h3>Tubi</h3><p>Discover a large catalog of free, ad-supported movies and shows.</p><span class="tag">Visit Tubi ↗</span></a>
-</div></section>
-<section id="apps"><div class="section-head"><div><div class="eyebrow">Make something cool</div><h2>🧰 App station</h2><p>Useful creative and learning tools.</p></div></div><div class="toolbar"><input class="search" id="appsearch" placeholder="Search apps..." aria-label="Search apps"></div><div class="grid" id="appgrid">
-<a class="card appcard" href="https://www.photopea.com/" target="_blank" rel="noopener"><div class="emoji">🎨</div><div class="tag">Design</div><h3>Photopea</h3><p>Edit images and work with layered designs.</p><span class="tag">Open app ↗</span></a>
-<a class="card appcard" href="https://scratch.mit.edu/" target="_blank" rel="noopener"><div class="emoji">🐱</div><div class="tag">Coding</div><h3>Scratch</h3><p>Create games, animations, and interactive stories.</p><span class="tag">Open app ↗</span></a>
-<a class="card appcard" href="https://www.desmos.com/calculator" target="_blank" rel="noopener"><div class="emoji">📈</div><div class="tag">Math</div><h3>Desmos</h3><p>Explore graphs and experiment with equations.</p><span class="tag">Open app ↗</span></a>
-<a class="card appcard" href="https://www.canva.com/" target="_blank" rel="noopener"><div class="emoji">✨</div><div class="tag">Creativity</div><h3>Canva</h3><p>Make presentations, posters, and graphics.</p><span class="tag">Open app ↗</span></a>
-<a class="card appcard" href="https://www.geogebra.org/" target="_blank" rel="noopener"><div class="emoji">📐</div><div class="tag">Learning</div><h3>GeoGebra</h3><p>Explore geometry, algebra, and interactive math.</p><span class="tag">Open app ↗</span></a>
-<a class="card appcard" href="https://typing.com/" target="_blank" rel="noopener"><div class="emoji">⌨️</div><div class="tag">Practice</div><h3>Typing.com</h3><p>Build typing speed and accuracy.</p><span class="tag">Open app ↗</span></a>
-</div></section>
-
-<div id="fb-overlay" role="dialog" aria-label="Football Bros game player"><div class="fb-toolbar"><strong>🏈 Football Bros</strong><div class="fb-actions"><button class="btn" onclick="fullscreenFootballBros()">⛶ Fullscreen</button><button class="btn" onclick="closeFootballBros()">Close ✕</button></div></div><iframe id="fb-frame" src="about:blank" title="Football Bros game" allow="fullscreen; autoplay; gamepad" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
-</main><footer><div class="wrap">© 2026 mathisgreate4 · Built for fun, creativity, and learning. Use sites in line with your school’s rules.</div></footer>
-<script>
-
-function openFootballBros(){const overlay=document.getElementById('fb-overlay'),frame=document.getElementById('fb-frame');overlay.classList.add('open');document.body.style.overflow='hidden';if(frame.src==='about:blank')frame.src='https://footballbros.io/';if(overlay.requestFullscreen){overlay.requestFullscreen().catch(()=>{});}}
-function closeFootballBros(){document.getElementById('fb-overlay').classList.remove('open');document.body.style.overflow='';}
-async function fullscreenFootballBros(){const frame=document.getElementById('fb-frame');try{if(frame.requestFullscreen)await frame.requestFullscreen();else if(frame.webkitRequestFullscreen)frame.webkitRequestFullscreen();}catch(e){alert('Fullscreen was blocked by the browser or game site. Try the Fullscreen button again.');}}
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeFootballBros()});
-
-const box=document.getElementById('gamebox'),area=document.getElementById('gamearea');
-function openGame(name){box.classList.add('show');document.getElementById('gametitle').textContent=({snake:'🐍 Neon Snake',memory:'🧠 Memory Match','2048':'🔢 2048',basketball:'🏀 Basketball Hoops',slope:'🟢 Slope Run',subway:'🚇 Subway Dash',duel:'🎯 1v1 Arena',geometry:'🟪 Geometry Jump'})[name];area.innerHTML='';if(name==='snake')snake();if(name==='memory')memory();if(name==='2048')game2048();if(name==='basketball')gameBasketball();if(name==='slope')gameSlope();if(name==='subway')gameSubway();if(name==='duel')gameDuel();if(name==='geometry')gameGeometry();box.scrollIntoView({behavior:'smooth',block:'center'});}
-function closeGame(){box.classList.remove('show');area.innerHTML='';}
-document.getElementById('appsearch').addEventListener('input',e=>{const q=e.target.value.toLowerCase();document.querySelectorAll('.appcard').forEach(c=>c.style.display=c.innerText.toLowerCase().includes(q)?'':'none')});
-function snake(){let c=document.createElement('canvas');c.width=400;c.height=400;c.className='gamecanvas';area.append(c);let ctx=c.getContext('2d'),s=[{x:8,y:10},{x:7,y:10},{x:6,y:10}],d={x:1,y:0},next={...d},food={x:13,y:10},score=0,alive=true;document.getElementById('gamehint').textContent='Use arrow keys or WASD. Press Restart to play again.';let bar=document.createElement('div');bar.className='gamecontrols';bar.innerHTML='<button id="restart">Restart</button><span id="score" class="note">Score: 0</span>';area.append(bar);function reset(){s=[{x:8,y:10},{x:7,y:10},{x:6,y:10}];d={x:1,y:0};next={...d};food={x:13,y:10};score=0;alive=true;draw()}document.getElementById('restart').onclick=reset;function draw(){ctx.fillStyle='#080d19';ctx.fillRect(0,0,400,400);ctx.strokeStyle='#18213a';for(let i=0;i<=20;i++){ctx.beginPath();ctx.moveTo(i*20,0);ctx.lineTo(i*20,400);ctx.moveTo(0,i*20);ctx.lineTo(400,i*20);ctx.stroke()}ctx.fillStyle='#ff4fd8';ctx.fillRect(food.x*20+3,food.y*20+3,14,14);s.forEach((p,i)=>{ctx.fillStyle=i?'#31b9d4':'#45e6ff';ctx.fillRect(p.x*20+2,p.y*20+2,16,16)});document.getElementById('score').textContent='Score: '+score;if(!alive){ctx.fillStyle='#fff';ctx.font='bold 24px sans-serif';ctx.fillText('Game over!',145,205)}}function tick(){if(!alive)return;d=next;let h={x:s[0].x+d.x,y:s[0].y+d.y};if(h.x<0||h.x>=20||h.y<0||h.y>=20||s.some(p=>p.x===h.x&&p.y===h.y)){alive=false;draw();return}s.unshift(h);if(h.x===food.x&&h.y===food.y){score++;food={x:Math.floor(Math.random()*20),y:Math.floor(Math.random()*20)}}else s.pop();draw()}function key(e){let m={ArrowUp:{x:0,y:-1},w:{x:0,y:-1},ArrowDown:{x:0,y:1},s:{x:0,y:1},ArrowLeft:{x:-1,y:0},a:{x:-1,y:0},ArrowRight:{x:1,y:0},d:{x:1,y:0}}[e.key];if(m&&m.x!==-d.x&&m.y!==-d.y){next=m;e.preventDefault()}}window.addEventListener('keydown',key);let id=setInterval(()=>{if(!box.classList.contains('show')||!c.isConnected){clearInterval(id);window.removeEventListener('keydown',key);return}tick()},125);draw()}
-function memory(){let vals=['🚀','🌙','🎮','⭐','🍕','🦄','🚀','🌙','🎮','⭐','🍕','🦄'].sort(()=>Math.random()-.5),open=[],done=0,moves=0;area.innerHTML='<div class="gamecontrols"><span class="note" id="mstat">Moves: 0 · Pairs: 0/6</span><button id="mreset">New game</button></div><div id="memgrid" style="display:grid;grid-template-columns:repeat(4,minmax(48px,76px));justify-content:center;gap:9px;margin:15px auto"></div>';let g=document.getElementById('memgrid');function setup(){g.innerHTML='';open=[];done=0;moves=0;vals.sort(()=>Math.random()-.5);vals.forEach((v,i)=>{let b=document.createElement('button');b.textContent='?';b.style='height:70px;border-radius:12px;border:1px solid #39496c;background:#202844;color:white;font-size:1.6rem;cursor:pointer';b.onclick=()=>{if(b.dataset.done||open.includes(b)||open.length===2)return;b.textContent=v;open.push(b);if(open.length===2){moves++;if(open[0].textContent===open[1].textContent){open.forEach(x=>x.dataset.done='1');done++;open=[]}else setTimeout(()=>{open.forEach(x=>x.textContent='?');open=[]},650);document.getElementById('mstat').textContent='Moves: '+moves+' · Pairs: '+done+'/6'+(done===6?' · You won!':'')}};g.append(b)})}document.getElementById('mreset').onclick=setup;setup();document.getElementById('gamehint').textContent='Tap two cards to find matching pairs.'}
-function game2048(){let board,score;area.innerHTML='<div class="gamecontrols"><strong id="s2048">Score: 0</strong><button id="r2048">New game</button></div><div id="b2048" style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;width:min(340px,100%);margin:15px auto;background:#252b43;padding:9px;border-radius:12px"></div>';let g=document.getElementById('b2048');function reset(){board=Array.from({length:4},()=>[0,0,0,0]);score=0;spawn();spawn();render()}function spawn(){let e=[];board.forEach((r,y)=>r.forEach((v,x)=>{if(!v)e.push([y,x])}));if(e.length){let [y,x]=e[Math.floor(Math.random()*e.length)];board[y][x]=Math.random()<.9?2:4}}function render(){g.innerHTML='';board.flat().forEach(v=>{let d=document.createElement('div');d.textContent=v||'';d.style='height:68px;display:grid;place-items:center;border-radius:8px;background:'+(v?'#344d72':'#171e32')+';color:white;font-size:1.35rem;font-weight:900';g.append(d)});document.getElementById('s2048').textContent='Score: '+score}function move(dir){let changed=false;for(let i=0;i<4;i++){let line=Array.from({length:4},(_,j)=>dir==='left'?board[i][j]:dir==='right'?board[i][3-j]:dir==='up'?board[j][i]:board[3-j][i]),a=line.filter(Boolean);for(let j=0;j<a.length-1;j++)if(a[j]===a[j+1]){a[j]*=2;score+=a[j];a.splice(j+1,1)}while(a.length<4)a.push(0);a.forEach((v,j)=>{let y=dir==='left'||dir==='right'?i:dir==='up'?j:3-j,x=dir==='left'?j:dir==='right'?3-j:i;if(board[y][x]!==v)changed=true;board[y][x]=v})}if(changed){spawn();render()}}function key(e){let k={ArrowLeft:'left',ArrowRight:'right',ArrowUp:'up',ArrowDown:'down'}[e.key];if(k&&box.classList.contains('show')){e.preventDefault();move(k)}}window.addEventListener('keydown',key);document.getElementById('r2048').onclick=()=>{reset()};reset();document.getElementById('gamehint').textContent='Use your arrow keys to slide tiles. Matching numbers combine.'}
-
-
-function gameCanvas(w=640,h=360){let c=document.createElement('canvas');c.width=w;c.height=h;c.className='gamecanvas';c.style.width='min(100%,'+w+'px)';area.append(c);return c}
-function gameBasketball(){const c=gameCanvas(),x=c.getContext('2d');let score=0,shots=0,ball=null,aim=0.5,power=0.7;document.getElementById('gamehint').textContent='Click/tap to shoot. Aim and power vary with your pointer position. Score as many baskets as you can!';let stat=document.createElement('div');stat.className='gamecontrols';stat.innerHTML='<strong id="bbstat">Baskets: 0 / Shots: 0</strong><button id="bbreset">Restart</button>';area.append(stat);document.getElementById('bbreset').onclick=()=>{score=shots=0;ball=null};c.addEventListener('pointerdown',e=>{if(ball)return;let r=c.getBoundingClientRect();aim=Math.max(.15,Math.min(.85,(e.clientX-r.left)/r.width));power=Math.max(.45,Math.min(1,(r.bottom-e.clientY)/r.height));ball={x:120,y:285,vx:5+aim*4,vy:-8-power*7,t:0};shots++});function frame(){if(!c.isConnected)return;x.fillStyle='#172338';x.fillRect(0,0,640,360);x.fillStyle='#d99b52';x.fillRect(0,320,640,40);x.fillStyle='#f0f3f7';x.fillRect(490,110,8,150);x.strokeStyle='#ff9c48';x.lineWidth=7;x.beginPath();x.moveTo(455,175);x.lineTo(510,175);x.stroke();x.strokeStyle='#fff';x.lineWidth=2;x.beginPath();x.moveTo(455,175);x.lineTo(455,210);x.lineTo(510,210);x.stroke();x.fillStyle='#f28c28';if(ball){ball.t++;ball.x+=ball.vx;ball.y+=ball.vy;ball.vy+=.28;if(ball.t>20&&ball.x>445&&ball.x<520&&ball.y>150&&ball.y<190){score++;ball=null}else if(ball.y>330||ball.x>650){ball=null}}if(ball){x.beginPath();x.arc(ball.x,ball.y,12,0,Math.PI*2);x.fill();x.strokeStyle='#713b16';x.lineWidth=2;x.beginPath();x.moveTo(ball.x-11,ball.y);x.lineTo(ball.x+11,ball.y);x.moveTo(ball.x,ball.y-11);x.lineTo(ball.x,ball.y+11);x.stroke()}else{x.beginPath();x.arc(120,285,12,0,Math.PI*2);x.fill()}document.getElementById('bbstat').textContent='Baskets: '+score+' / Shots: '+shots;requestAnimationFrame(frame)}frame()}
-function gameSlope(){const c=gameCanvas(),x=c.getContext('2d');let px=320,score=0,obs=[],alive=true,keys={};document.getElementById('gamehint').textContent='Use ← → or A/D to steer. Dodge the red blocks and survive as long as possible.';let bar=document.createElement('div');bar.className='gamecontrols';bar.innerHTML='<strong id="slscore">Distance: 0</strong><button id="slreset">Restart</button>';area.append(bar);function reset(){px=320;score=0;obs=[];alive=true}document.getElementById('slreset').onclick=reset;function kd(e){if(['ArrowLeft','ArrowRight','a','d'].includes(e.key)){keys[e.key]=true;e.preventDefault()}}function ku(e){keys[e.key]=false}window.addEventListener('keydown',kd);window.addEventListener('keyup',ku);function frame(){if(!c.isConnected){window.removeEventListener('keydown',kd);window.removeEventListener('keyup',ku);return}x.fillStyle='#101827';x.fillRect(0,0,640,360);x.fillStyle='#26364d';x.beginPath();x.moveTo(170,0);x.lineTo(470,0);x.lineTo(640,360);x.lineTo(0,360);x.fill();x.strokeStyle='#62758e';x.lineWidth=3;x.beginPath();x.moveTo(320,0);x.lineTo(320,360);x.stroke();if(alive){score++;if(keys.ArrowLeft||keys.a)px-=5;if(keys.ArrowRight||keys.d)px+=5;px=Math.max(20,Math.min(620,px));if(Math.random()<.035)obs.push({x:190+Math.random()*260,y:-30,w:30+Math.random()*25,h:24});obs.forEach(o=>o.y+=4+score/900);obs=obs.filter(o=>o.y<390);for(let o of obs){x.fillStyle='#ff5364';x.fillRect(o.x,o.y,o.w,o.h);if(px+10>o.x&&px-10<o.x+o.w&&315>o.y&&295<o.y+o.h)alive=false}}x.fillStyle='#52dcff';x.beginPath();x.arc(px,305,13,0,Math.PI*2);x.fill();document.getElementById('slscore').textContent='Distance: '+Math.floor(score/5)+(alive?'':' · CRASH!');requestAnimationFrame(frame)}frame()}
-function gameSubway(){const c=gameCanvas(),x=c.getContext('2d');let lane=1,jump=0,score=0,obs=[],dead=false;document.getElementById('gamehint').textContent='← / → to switch lanes, ↑ or Space to jump. Dodge the barriers and trains!';let bar=document.createElement('div');bar.className='gamecontrols';bar.innerHTML='<strong id="swscore">0 m</strong><button id="swreset">Restart</button>';area.append(bar);function reset(){lane=1;jump=0;score=0;obs=[];dead=false}document.getElementById('swreset').onclick=reset;function key(e){if(['ArrowLeft','ArrowRight','ArrowUp',' '].includes(e.key)){e.preventDefault();if(dead){reset();return}if(e.key==='ArrowLeft')lane=Math.max(0,lane-1);if(e.key==='ArrowRight')lane=Math.min(2,lane+1);if(e.key==='ArrowUp'||e.key===' ')jump=24}}window.addEventListener('keydown',key);function frame(){if(!c.isConnected){window.removeEventListener('keydown',key);return}x.fillStyle='#18202b';x.fillRect(0,0,640,360);x.fillStyle='#293747';x.fillRect(125,0,390,360);for(let i=0;i<4;i++){x.fillStyle='#9ba9b7';x.fillRect(245+i*50,0,5,360)}x.fillStyle='#d2d9df';x.fillRect(125,0,7,360);x.fillRect(508,0,7,360);if(!dead){score++;if(Math.random()<.035)obs.push({lane:Math.floor(Math.random()*3),y:-35});obs.forEach(o=>o.y+=5);obs=obs.filter(o=>o.y<390);if(jump>0)jump--;if(obs.some(o=>o.lane===lane&&o.y>270&&o.y<325&&jump<8))dead=true}obs.forEach(o=>{x.fillStyle='#f06b58';x.fillRect(170+o.lane*100,o.y,60,34)});let py=jump?255:300;x.fillStyle='#54d6ff';x.fillRect(185+lane*100,py,30,42);x.fillStyle='#fff';x.font='bold 18px sans-serif';x.fillText(dead?'CRASH! Press a key to restart':'SUBWAY DASH',18,28);document.getElementById('swscore').textContent=Math.floor(score/5)+' m';requestAnimationFrame(frame)}frame()}
-function gameDuel(){const c=gameCanvas(),x=c.getContext('2d');let p={x:110,y:180,hp:100},bot={x:520,y:180,hp:100},shots=[],keys={},won=false;document.getElementById('gamehint').textContent='Move with WASD or arrow keys. Aim with your mouse and hold Space to fire. Defeat the training bot.';let bar=document.createElement('div');bar.className='gamecontrols';bar.innerHTML='<strong id="duelstat">You: 100 · Bot: 100</strong><button id="duelreset">Restart</button>';area.append(bar);function reset(){p={x:110,y:180,hp:100};bot={x:520,y:180,hp:100};shots=[];won=false}document.getElementById('duelreset').onclick=reset;function kd(e){keys[e.key.toLowerCase()]=true}function ku(e){keys[e.key.toLowerCase()]=false}window.addEventListener('keydown',kd);window.addEventListener('keyup',ku);let target={x:500,y:180},fire=0;c.addEventListener('pointermove',e=>{let r=c.getBoundingClientRect();target={x:(e.clientX-r.left)*640/r.width,y:(e.clientY-r.top)*360/r.height}});function frame(){if(!c.isConnected){window.removeEventListener('keydown',kd);window.removeEventListener('keyup',ku);return}x.fillStyle='#182331';x.fillRect(0,0,640,360);x.strokeStyle='#34495e';for(let i=0;i<640;i+=40){x.beginPath();x.moveTo(i,0);x.lineTo(i,360);x.stroke()}if(!won){if(keys.a||keys.arrowleft)p.x-=3;if(keys.d||keys.arrowright)p.x+=3;if(keys.w||keys.arrowup)p.y-=3;if(keys.s||keys.arrowdown)p.y+=3;p.x=Math.max(15,Math.min(625,p.x));p.y=Math.max(15,Math.min(345,p.y));if(keys[' ']&&fire++%10===0){let a=Math.atan2(target.y-p.y,target.x-p.x);shots.push({x:p.x,y:p.y,vx:Math.cos(a)*7,vy:Math.sin(a)*7,who:'p'})}let a=Math.atan2(p.y-bot.y,p.x-bot.x);bot.x+=Math.cos(a)*.7;bot.y+=Math.sin(a)*.7;if(Math.random()<.025)shots.push({x:bot.x,y:bot.y,vx:Math.cos(a)*4,vy:Math.sin(a)*4,who:'b'});shots.forEach(s=>{s.x+=s.vx;s.y+=s.vy;if(Math.hypot(s.x-(s.who==='p'?bot.x:p.x),s.y-(s.who==='p'?bot.y:p.y))<18){if(s.who==='p')bot.hp-=8;else p.hp-=6;s.dead=true}});shots=shots.filter(s=>!s.dead&&s.x>0&&s.x<640&&s.y>0&&s.y<360);if(bot.hp<=0||p.hp<=0)won=true}x.fillStyle='#4bd5ff';x.beginPath();x.arc(p.x,p.y,14,0,7);x.fill();x.fillStyle='#ff6678';x.beginPath();x.arc(bot.x,bot.y,14,0,7);x.fill();shots.forEach(s=>{x.fillStyle=s.who==='p'?'#a8f0ff':'#ffb0b8';x.beginPath();x.arc(s.x,s.y,5,0,7);x.fill()});document.getElementById('duelstat').textContent='You: '+Math.max(0,p.hp)+' · Bot: '+Math.max(0,bot.hp)+(won?(bot.hp<=0?' · YOU WIN!':' · TRY AGAIN'):'');requestAnimationFrame(frame)}frame()}
-function gameGeometry(){const c=gameCanvas(),x=c.getContext('2d');let y=290,vy=0,ob=[],score=0,dead=false,keys={};document.getElementById('gamehint').textContent='Press Space, ↑, click, or tap to jump over spikes. How far can you get?';let bar=document.createElement('div');bar.className='gamecontrols';bar.innerHTML='<strong id="gdscore">0 m</strong><button id="gdreset">Restart</button>';area.append(bar);function reset(){y=290;vy=0;ob=[];score=0;dead=false}document.getElementById('gdreset').onclick=reset;function jump(e){if([' ','ArrowUp'].includes(e.key)){e.preventDefault();if(y>=289&&!dead)vy=-11;if(dead)reset()}}window.addEventListener('keydown',jump);c.addEventListener('pointerdown',()=>{if(y>=289&&!dead)vy=-11;if(dead)reset()});function frame(){if(!c.isConnected){window.removeEventListener('keydown',jump);return}x.fillStyle='#111827';x.fillRect(0,0,640,360);x.fillStyle='#28374d';x.fillRect(0,310,640,50);if(!dead){score++;if(Math.random()<.025)ob.push({x:650,w:25+Math.random()*15});ob.forEach(o=>o.x-=5);ob=ob.filter(o=>o.x>-40);vy+=.55;y=Math.min(290,y+vy);if(ob.some(o=>o.x<90&&o.x+o.w>55&&y>270))dead=true}x.fillStyle='#a78bfa';x.fillRect(60,y,28,28);x.fillStyle='#ff6678';ob.forEach(o=>{x.beginPath();x.moveTo(o.x,310);x.lineTo(o.x+o.w/2,270);x.lineTo(o.x+o.w,310);x.fill()});x.fillStyle='#e9efff';x.font='bold 18px sans-serif';x.fillText(dead?'CRASH! Press jump to restart':'GEOMETRY JUMP',18,30);document.getElementById('gdscore').textContent=Math.floor(score/5)+' m';requestAnimationFrame(frame)}frame()}
-
-const gnGames=[...document.querySelectorAll('.gn-game')],gnSearch=document.getElementById('gn-search'),gnPlayer=document.getElementById('gn-player'),gnFrame=document.getElementById('gn-frame');let gnFilter='all',gnCurrent='';
-function gnRender(){let q=gnSearch.value.toLowerCase(),n=0;gnGames.forEach(b=>{let show=(gnFilter==='all'||b.dataset.category===gnFilter)&&b.dataset.title.toLowerCase().includes(q);b.style.display=show?'':'none';if(show)n++});document.getElementById('gn-count').textContent=n+' games'}
-document.getElementById('gn-categories').addEventListener('click',e=>{let b=e.target.closest('button[data-filter]');if(!b)return;gnFilter=b.dataset.filter;document.querySelectorAll('#gn-categories button').forEach(x=>x.classList.toggle('active',x===b));gnRender()});
-gnSearch.addEventListener('input',gnRender);
-function gnOpen(title,url,local){if(local){openGame(local);return}gnCurrent=url;document.getElementById('gn-player-title').textContent=title;gnFrame.src=url;gnPlayer.classList.add('open');gnPlayer.scrollIntoView({behavior:'smooth',block:'center'})}
-gnGames.forEach(b=>b.addEventListener('click',()=>gnOpen(b.dataset.title,b.dataset.url,b.dataset.local)));
-document.getElementById('gn-close').addEventListener('click',()=>{gnPlayer.classList.remove('open');gnFrame.src='about:blank'});
-document.getElementById('gn-fullscreen').addEventListener('click',async()=>{try{if(gnFrame.requestFullscreen)await gnFrame.requestFullscreen();else await gnPlayer.requestFullscreen()}catch(e){document.getElementById('gn-player-note').textContent='Fullscreen was blocked by your browser. Try again or open the game in a new tab.'}});
-document.getElementById('gn-open-tab').addEventListener('click',()=>{if(gnCurrent)window.open(gnCurrent,'_blank','noopener,noreferrer')});
-gnRender();
-
-</script></body></html>
+  <header class="site-header">
+    <a class="logo" href="#" aria-label="Matheise4 home"><span class="logo-mark">M</span> Matheise4</a>
+    <nav><a href="#games">Games</a><a href="#about">About</a></nav>
+  </header>
+  <main class="container">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">YOUR NEXT FAVORITE GAME IS HERE</p>
+        <h1>Play more.<br><span>Scroll less.</span></h1>
+        <p class="hero-subtitle">A simple, fast game hub. Pick a game, load it right here, and jump in.</p>
+        <a class="primary-button" href="#games">Explore games <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="art-glow"></div><div class="art-card card-back"></div>
+        <div class="art-card card-front"><span>✦</span><b>GAME<br>ON</b><small>MATHEISE4</small></div>
+        <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+      </div>
+    </section>
+    <section id="games" class="games-section">
+      <div class="section-heading">
+        <div><p class="eyebrow">THE LIBRARY</p><h2>Choose your game</h2></div>
+        <span id="game-count" class="game-count">Loading games…</span>
+      </div>
+      <div class="toolbar">
+        <label class="search-wrap"><span aria-hidden="true">⌕</span><input id="game-search" type="search" placeholder="Search games…" autocomplete="off"></label>
+        <div id="category-filters" class="filters" aria-label="Filter games">
+          <button class="filter active" data-category="all">All</button>
+          <button class="filter" data-category="sports">Sports</button>
+          <button class="filter" data-category="racing">Racing</button>
+          <button class="filter" data-category="arcade">Arcade</button>
+          <button class="filter" data-category="puzzle">Puzzle</button>
+          <button class="filter" data-category="worlds">Worlds</button>
+        </div>
+      </div>
+      <div id="game-grid" class="game-grid" aria-live="polite">
+        <div class="loading-card">Getting the games ready…</div>
+      </div>
+      <section id="player" class="player" aria-label="Game player" hidden>
+        <div class="player-heading">
+          <div><p class="eyebrow">NOW PLAYING</p><h2 id="player-title">Game</h2></div>
+          <div class="player-actions">
+            <button id="fullscreen-button" class="secondary-button" type="button">⛶ Fullscreen</button>
+            <a id="new-tab-button" class="secondary-button" href="#" target="_blank" rel="noopener noreferrer">New tab ↗</a>
+            <button id="close-button" class="close-button" type="button" aria-label="Close game">✕</button>
+          </div>
+        </div>
+        <div class="frame-wrap"><iframe id="game-frame" title="Selected game" src="about:blank" allow="fullscreen; autoplay; gamepad; clipboard-read; clipboard-write" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+        <p id="player-message" class="player-message">Some game websites block being embedded. If the game does not load, use New tab.</p>
+      </section>
+    </section>
+    <section id="about" class="about-section">
+      <p class="eyebrow">MADE TO KEEP IT SIMPLE</p><h2>Welcome to Matheise4.</h2>
+      <p>Games are listed in one JSON file, so adding or changing a game later is easy. Just add another entry to <code>data/games.json</code>.</p>
+    </section>
+  </main>
+  <footer><span>MATHEISE4</span><span>Built for fun. Play responsibly.</span></footer>
+</body>
+</html>
