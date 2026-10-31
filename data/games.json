@@ -1,5 +1,13 @@
 [
   {
+    "id": "bacon-may-die",
+    "title": "Bacon May Die",
+    "category": "arcade",
+    "icon": "🥓",
+    "description": "Fight waves of enemies in this action-packed side-scrolling game.",
+    "iframe": "https://the-pizza-editionfree.github.io/lesson306/lesson-223"
+  },
+  {
     "id": "retro-bowl",
     "title": "Retro Bowl",
     "category": "sports",
