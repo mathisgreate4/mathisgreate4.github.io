@@ -486,5 +486,165 @@
     "icon": "🧩",
     "description": "Solve puzzles and beat the challenge.",
     "iframe": "https://playslope.io/jungle-bubble-shooter-mania"
+  },
+  {
+    "id": "retro-bowl",
+    "title": "Retro Bowl",
+    "category": "sports",
+    "icon": "🏈",
+    "description": "Arcade football and team management.",
+    "iframe": "https://retrobowl.me/"
+  },
+  {
+    "id": "moto-x3m",
+    "title": "Moto X3M",
+    "category": "racing",
+    "icon": "🏍️",
+    "description": "Perform stunts and race through obstacle courses.",
+    "iframe": "https://poki.com/en/g/moto-x3m"
+  },
+  {
+    "id": "subway-surfers",
+    "title": "Subway Surfers",
+    "category": "arcade",
+    "icon": "🚆",
+    "description": "Run, dodge trains, and collect coins.",
+    "iframe": "https://poki.com/en/g/subway-surfers"
+  },
+  {
+    "id": "2048",
+    "title": "2048",
+    "category": "puzzle",
+    "icon": "🔢",
+    "description": "Combine matching tiles to reach 2048.",
+    "iframe": "https://play2048.co/"
+  },
+  {
+    "id": "slither-io",
+    "title": "Slither.io",
+    "category": "arcade",
+    "icon": "🐍",
+    "description": "Grow your snake and avoid other players.",
+    "iframe": "https://slither.io/"
+  },
+  {
+    "id": "paper-io-2",
+    "title": "Paper.io 2",
+    "category": "arcade",
+    "icon": "🟦",
+    "description": "Claim territory while avoiding opponents.",
+    "iframe": "https://paper-io.com/"
+  },
+  {
+    "id": "basketball-stars",
+    "title": "Basketball Stars",
+    "category": "sports",
+    "icon": "🏀",
+    "description": "Play one-on-one basketball matches.",
+    "iframe": "https://www.crazygames.com/game/basketball-stars"
+  },
+  {
+    "id": "snow-rider-3d",
+    "title": "Snow Rider 3D",
+    "category": "racing",
+    "icon": "❄️",
+    "description": "Ride downhill and dodge obstacles.",
+    "iframe": "https://www.snowrider3d.com/"
+  },
+  {
+    "id": "drift-hunters",
+    "title": "Drift Hunters",
+    "category": "racing",
+    "icon": "🚗",
+    "description": "Drift through tracks and tune your car.",
+    "iframe": "https://drifthunters.com/"
+  },
+  {
+    "id": "shell-shockers",
+    "title": "Shell Shockers",
+    "category": "sports",
+    "icon": "🥚",
+    "description": "Compete in a multiplayer egg-themed shooter.",
+    "iframe": "https://shellshock.io/"
+  },
+  {
+    "id": "fireboy-and-watergirl",
+    "title": "Fireboy and Watergirl",
+    "category": "puzzle",
+    "icon": "🔥",
+    "description": "Work together to solve co-op platform puzzles.",
+    "iframe": "https://www.coolmathgames.com/0-fireboy-and-water-girl"
+  },
+  {
+    "id": "cut-the-rope",
+    "title": "Cut the Rope",
+    "category": "puzzle",
+    "icon": "🍬",
+    "description": "Solve physics puzzles to feed the little monster.",
+    "iframe": "https://www.crazygames.com/game/cut-the-rope"
+  },
+  {
+    "id": "tetris",
+    "title": "Tetris",
+    "category": "puzzle",
+    "icon": "🧱",
+    "description": "Fit falling blocks together to clear lines.",
+    "iframe": "https://tetris.com/play-tetris"
+  },
+  {
+    "id": "basket-random",
+    "title": "Basket Random",
+    "category": "sports",
+    "icon": "🏀",
+    "description": "Play chaotic two-button basketball.",
+    "iframe": "https://www.crazygames.com/game/basket-random"
+  },
+  {
+    "id": "smash-karts",
+    "title": "Smash Karts",
+    "category": "sports",
+    "icon": "🏎️",
+    "description": "Race and battle in multiplayer kart arenas.",
+    "iframe": "https://smashkarts.io/"
+  },
+  {
+    "id": "tiny-fishing",
+    "title": "Tiny Fishing",
+    "category": "arcade",
+    "icon": "🎣",
+    "description": "Catch fish and upgrade your fishing gear.",
+    "iframe": "https://www.crazygames.com/game/tiny-fishing"
+  },
+  {
+    "id": "drift-boss",
+    "title": "Drift Boss",
+    "category": "racing",
+    "icon": "🛞",
+    "description": "Time your turns on a narrow drifting track.",
+    "iframe": "https://www.crazygames.com/game/drift-boss"
+  },
+  {
+    "id": "wordle",
+    "title": "Wordle",
+    "category": "puzzle",
+    "icon": "🔤",
+    "description": "Guess the five-letter word in six tries.",
+    "iframe": "https://www.nytimes.com/games/wordle/index.html"
+  },
+  {
+    "id": "chess",
+    "title": "Chess",
+    "category": "puzzle",
+    "icon": "♟️",
+    "description": "Play chess against a computer or other players.",
+    "iframe": "https://www.chess.com/play"
+  },
+  {
+    "id": "monkey-mart",
+    "title": "Monkey Mart",
+    "category": "arcade",
+    "icon": "🐵",
+    "description": "Run a busy supermarket in this management game.",
+    "iframe": "https://www.crazygames.com/game/monkey-mart"
   }
 ]
