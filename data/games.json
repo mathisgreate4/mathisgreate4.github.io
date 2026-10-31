@@ -56,14 +56,6 @@
     "iframe": "https://run3.io/"
   },
   {
-    "id": "1v1-lol",
-    "title": "1v1.LOL",
-    "category": "sports",
-    "icon": "🎯",
-    "description": "Build, aim, and compete in fast online matches.",
-    "iframe": "https://1v1.lol/"
-  },
-  {
     "id": "monkey-mart",
     "title": "Monkey Mart",
     "category": "arcade",
