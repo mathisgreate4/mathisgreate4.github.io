@@ -81,7 +81,7 @@ header{background:#171a20!important;backdrop-filter:none;border-bottom:1px solid
 
 function openFootballBros(){const overlay=document.getElementById('fb-overlay'),frame=document.getElementById('fb-frame');overlay.classList.add('open');document.body.style.overflow='hidden';if(frame.src==='about:blank')frame.src='https://footballbros.io/';if(overlay.requestFullscreen){overlay.requestFullscreen().catch(()=>{});}}
 function closeFootballBros(){document.getElementById('fb-overlay').classList.remove('open');document.body.style.overflow='';}
-async function fullscreenFootballBros(){const frame=document.getElementById('fb-frame');try{if(frame.requestFullscreen)await frame.requestFullscreen();else if(frame.webkitRequestFullscreen)frame.webkitRequestFullscreen();}catch(e){alert('Fullscreen was blocked by the browser or game site. Use “Open separately” and press F11.');}}
+async function fullscreenFootballBros(){const frame=document.getElementById('fb-frame');try{if(frame.requestFullscreen)await frame.requestFullscreen();else if(frame.webkitRequestFullscreen)frame.webkitRequestFullscreen();}catch(e){alert('Fullscreen was blocked by the browser or game site. Try the Fullscreen button again.');}}
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeFootballBros()});
 
 const box=document.getElementById('gamebox'),area=document.getElementById('gamearea');
