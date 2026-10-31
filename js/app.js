@@ -1,4 +1,11 @@
-const grid = document.querySelector("#game-grid");
+const slideshows = [
+  { name: "Sports", category: "sports" },
+  { name: "Racing", category: "racing" },
+  { name: "Worlds", category: "worlds" },
+  { name: "Arcade", category: "arcade" },
+  { name: "Puzzle", category: "puzzle" }
+];
+const container = document.querySelector("#game-slideshows");
 const searchInput = document.querySelector("#game-search");
 const filters = document.querySelector("#category-filters");
 const countLabel = document.querySelector("#game-count");
@@ -16,7 +23,7 @@ async function loadGames() {
     games = await response.json();
     renderGames();
   } catch (error) {
-    grid.innerHTML = '<div class="empty-state">Could not load the game list. Check that <code>data/games.json</code> exists and contains valid JSON.</div>';
+    container.innerHTML = '<div class="empty-state">Could not load the game list. Check data/games.json.</div>';
     countLabel.textContent = "Library unavailable";
     console.error(error);
   }
@@ -24,32 +31,52 @@ async function loadGames() {
 
 function renderGames() {
   const query = searchInput.value.trim().toLowerCase();
-  const visibleGames = games.filter(game => {
+  const visible = games.filter(game => {
     const matchesCategory = activeCategory === "all" || game.category === activeCategory;
     const searchable = (game.title + " " + game.description + " " + game.category).toLowerCase();
     return matchesCategory && searchable.includes(query);
   });
-
-  countLabel.textContent = visibleGames.length + (visibleGames.length === 1 ? " game" : " games");
-  if (!visibleGames.length) {
-    grid.innerHTML = '<div class="empty-state">No games found. Try another search.</div>';
+  countLabel.textContent = visible.length + (visible.length === 1 ? " game" : " games");
+  if (!visible.length) {
+    container.innerHTML = '<div class="empty-state">No games found. Try another search.</div>';
     return;
   }
 
-  grid.innerHTML = visibleGames.map(game => `
-    <article class="game-card">
-      <div class="game-icon" aria-hidden="true">${escapeHtml(game.icon || "🎮")}</div>
-      <div class="game-category">${escapeHtml(game.category)}</div>
-      <h3>${escapeHtml(game.title)}</h3>
-      <p>${escapeHtml(game.description || "")}</p>
-      <button class="play-button" type="button" data-game-id="${escapeHtml(game.id)}">Play game ↗</button>
-    </article>
+  const groups = activeCategory === "all"
+    ? slideshows.map(row => ({...row, games: visible.filter(game => game.category === row.category)})).filter(row => row.games.length)
+    : [{name: activeCategory[0].toUpperCase() + activeCategory.slice(1), category: activeCategory, games: visible}];
+
+  container.innerHTML = groups.map(row => `
+    <section class="game-row">
+      <div class="game-row-heading"><h3>${escapeHtml(row.name)} Games</h3><span>${row.games.length} available</span></div>
+      <div class="game-row-track-wrap">
+        <button class="slide-arrow prev" type="button" aria-label="Scroll ${escapeHtml(row.name)} left">‹</button>
+        <div class="game-row-track">
+          ${row.games.map(game => `
+            <article class="game-card">
+              <div class="game-card-art"><span>${escapeHtml(game.icon || "🎮")}</span><small>${escapeHtml(row.name.toUpperCase())}</small></div>
+              <div class="game-category">${escapeHtml(game.category)}</div>
+              <h4>${escapeHtml(game.title)}</h4>
+              <p>${escapeHtml(game.description || "")}</p>
+              <button class="play-button" type="button" data-game-id="${escapeHtml(game.id)}">Play game ↗</button>
+            </article>
+          `).join("")}
+        </div>
+        <button class="slide-arrow next" type="button" aria-label="Scroll ${escapeHtml(row.name)} right">›</button>
+      </div>
+    </section>
   `).join("");
 
-  grid.querySelectorAll("[data-game-id]").forEach(button => {
+  container.querySelectorAll("[data-game-id]").forEach(button => {
     button.addEventListener("click", () => {
       const selected = games.find(game => game.id === button.dataset.gameId);
       if (selected) openGame(selected);
+    });
+  });
+  container.querySelectorAll(".slide-arrow").forEach(button => {
+    button.addEventListener("click", () => {
+      const track = button.parentElement.querySelector(".game-row-track");
+      track.scrollBy({left: button.classList.contains("prev") ? -330 : 330, behavior:"smooth"});
     });
   });
 }
@@ -77,20 +104,16 @@ filters.addEventListener("click", event => {
   filters.querySelectorAll(".filter").forEach(item => item.classList.toggle("active", item === button));
   renderGames();
 });
-
 document.querySelector("#close-button").addEventListener("click", () => {
   frame.src = "about:blank";
   player.hidden = true;
 });
-
 document.querySelector("#fullscreen-button").addEventListener("click", async () => {
   try {
     if (frame.requestFullscreen) await frame.requestFullscreen();
     else await document.querySelector(".frame-wrap").requestFullscreen();
   } catch (error) {
-    document.querySelector("#player-message").textContent =
-      "Fullscreen was blocked by the browser. Try again or use New tab.";
+    document.querySelector("#player-message").textContent = "Fullscreen was blocked. Try again or use New tab.";
   }
 });
-
 loadGames();
