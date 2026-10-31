@@ -118,5 +118,13 @@
     "icon": "🏀",
     "description": "Play arcade basketball and battle for the winning shot.",
     "iframe": "https://the-pizza-editionfree.github.io/lesson306/lesson-242"
+  },
+  {
+    "id": "cat-gunner",
+    "title": "Cat Gunner: Super Zombie Shoot",
+    "category": "arcade",
+    "icon": "🐱",
+    "description": "Take on waves of zombies in this action-packed cat shooter.",
+    "iframe": "https://the-pizza-editionfree.github.io/lesson302/lesson-62"
   }
 ]
