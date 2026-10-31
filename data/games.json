@@ -102,5 +102,13 @@
     "icon": "🏀",
     "description": "Play fast-paced arcade basketball and take on opponents.",
     "iframe": "https://the-pizza-editionfree.github.io/lesson302/lesson-108"
+  },
+  {
+    "id": "eggy-car",
+    "title": "Eggy Car",
+    "category": "racing",
+    "icon": "🥚",
+    "description": "Drive carefully over hills while keeping your egg from falling.",
+    "iframe": "https://the-pizza-editionfree.github.io/lesson302/lesson-10"
   }
 ]
