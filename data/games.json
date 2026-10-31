@@ -86,5 +86,13 @@
     "icon": "🎭",
     "description": "Make life choices and see how your character's story unfolds.",
     "iframe": "https://the-pizza-editionfree.github.io/lesson302/lesson-4"
+  },
+  {
+    "id": "subway-surfers-new-york",
+    "title": "Subway Surfers New York",
+    "category": "arcade",
+    "icon": "🚇",
+    "description": "Dash through the subway, dodge trains, and collect coins in New York.",
+    "iframe": "https://the-pizza-editionfree.github.io/lesson302/lesson-143"
   }
 ]
