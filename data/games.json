@@ -1,5 +1,13 @@
 [
   {
+    "id": "retro-bowl",
+    "title": "Retro Bowl",
+    "category": "sports",
+    "icon": "🏈",
+    "description": "Lead your team, make plays, and score touchdowns.",
+    "iframe": "https://the-pizza-editionfree.github.io/lesson302/lesson-24"
+  },
+  {
     "id": "football-bros",
     "title": "Football Bros",
     "category": "sports",
