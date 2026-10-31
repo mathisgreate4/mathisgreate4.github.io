@@ -110,5 +110,13 @@
     "icon": "🥚",
     "description": "Drive carefully over hills while keeping your egg from falling.",
     "iframe": "https://the-pizza-editionfree.github.io/lesson302/lesson-10"
+  },
+  {
+    "id": "iron-snout",
+    "title": "Iron Snout",
+    "category": "arcade",
+    "icon": "🐷",
+    "description": "Fight off waves of enemies as a quick-footed pig hero.",
+    "iframe": "https://the-pizza-editionfree.github.io/lesson302/lesson-14"
   }
 ]
