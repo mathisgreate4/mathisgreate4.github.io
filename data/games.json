@@ -281,5 +281,14 @@
     "icon": "🎭",
     "description": "Survive the night shift at Freddy Fazbear's Pizza in FNAF 2.",
     "iframe": "games/fnaf2/"
+  },
+  {
+    "id": "ragdoll-hit",
+    "title": "Ragdoll Hit",
+    "category": "arcade",
+    "icon": "🥊",
+    "description": "Launch ragdoll fighters, land hits, and take down your opponents.",
+    "iframe": "games/ragdoll-hit/",
+    "image": "https://rawcdn.githack.com/bubblfan/google-class/main/ragdoll-hit/thumbnail.png"
   }
 ]
