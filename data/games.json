@@ -257,5 +257,13 @@
     "icon": "⛏️",
     "description": "Mine resources, craft tools, and survive in a blocky world.",
     "iframe": "https://html5.gamedistribution.com/rvvASMiM/df7e4dc5cbab4203900121d3a24b0288/index.html?gd_sdk_referrer_url=https%3A%2F%2Fwww.onlinegames.io%2Fcraftmine&gd_zone_config=eyJwYXJlbnRVUkwiOiJodHRwczovL3d3dy5vbmxpbmVnYW1lcy5pby9jcmFmdG1pbmUiLCJwYXJlbnREb21haW4iOiJvbmxpbmVnYW1lcy5pbyIsInRvcERvbWFpbiI6Im9ubGluZWdhbWVzLmlvIiwiaGFzSW1wcmVzc2lvbiI6ZmFsc2UsImxvYWRlckVuYWJsZWQiOnRydWUsImhvc3QiOiJodG1sNS5nYW1lZGlzdHJpYnV0aW9uLmNvbSIsInZlcnNpb24iOiIxLjUuMTgifQ%253D%253D"
+  },
+  {
+    "id": "baseball-bros",
+    "title": "Baseball Bros",
+    "category": "sports",
+    "icon": "⚾",
+    "description": "Play fast-paced baseball, hit home runs, and steal bases.",
+    "iframe": "https://cdn.jsdelivr.net/gh/ltorl/dancing-bunny-games@main/baseballbros.html"
   }
 ]
