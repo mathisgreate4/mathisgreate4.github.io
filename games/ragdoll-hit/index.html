@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script>
+    (function() {
+      var BASE = "https://cdn.jsdelivr.net/gh/ltorl/dancing-bunny-games@main/";
+      var HREF = BASE + "ragdollhit.html";
+      var NativeURL = window.URL;
+      window.__DB_HREF__ = HREF;
+      try { Object.defineProperty(document, "URL", { configurable: true, get: function() { return HREF; } }); } catch (e) {}
+      try { Object.defineProperty(document, "documentURI", { configurable: true, get: function() { return HREF; } }); } catch (e) {}
+      function fixBase(base) {
+        return (base !== undefined && String(base).indexOf("about:") === 0) ? BASE : base;
+      }
+      window.URL = class extends NativeURL {
+        constructor(url, base) {
+          if (arguments.length < 2) super(url);
+          else super(url, fixBase(base));
+        }
+      };
+      if (NativeURL.canParse) window.URL.canParse = function(url, base) { return NativeURL.canParse(url, fixBase(base)); };
+      if (NativeURL.parse) window.URL.parse = function(url, base) { return NativeURL.parse(url, fixBase(base)); };
+    })();
+  </script>
+  <base href="https://rawcdn.githack.com/bubblfan/google-class/main/ragdoll-hit/">
+  <meta name="robots" content="noindex,nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ragdoll Hit</title>
+  <style>
+    html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: #4d4d4d; }
+    body { min-height: 100%; }
+    canvas { display: block; }
+  </style>
+  <script>
+    window.config = {
+      loader: "unity-2020",
+      debug: false,
+      maxRatio: 24 / 9,
+      minRatio: 9 / 24,
+      title: "Ragdoll Hit",
+      thumbnail: "thumbnail.png",
+      numScreenshots: 4,
+      unityVersion: "2022.3.6f1",
+      unityWebglBuildUrl: "",
+      fileSize: 9,
+      cachedDecompressedFileSizes: {
+        "3276aa7c11496bcc48eb6908f112f0c3.js.unityweb": 66682,
+        "959bf1c60308f1c34bf072f43c3c17d4.data.unityweb": 4377721,
+        "f23c0f3f40a28f1adce731399dde22aa.wasm.unityweb": 5105161,
+        "v84.loader.js": 114199
+      },
+      metadata: {
+        poki_template_version: 1,
+        background_color: "#4D4D4D",
+        code_filename: "f23c0f3f40a28f1adce731399dde22aa.wasm.unityweb",
+        company_name: "Ericetto",
+        data_filename: "959bf1c60308f1c34bf072f43c3c17d4.data.unityweb",
+        decompression_fallback: "Brotli",
+        development_player: "false",
+        framework_filename: "3276aa7c11496bcc48eb6908f112f0c3.js.unityweb",
+        height: "600",
+        loader_filename: "v84.loader.js",
+        product_name: "Ragdoll Hit",
+        product_version: "0.1",
+        splash_screen_style: "Dark",
+        unity_version: "2022.3.6f1",
+        use_data_caching: "true",
+        use_threads: "false",
+        use_wasm: "true",
+        use_webgl_1_0: "true",
+        use_webgl_2_0: "true",
+        width: "960"
+      }
+    };
+  </script>
+  <script src="MobileDetect.js"></script>
+</head>
+<body>
+  <script src="master-loader.js"></script>
+</body>
+</html>
