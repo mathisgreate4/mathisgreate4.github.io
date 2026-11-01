@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>Five Nights at Freddy's 2</title>
+  <base href="https://cdn.jsdelivr.net/gh/bubbls/fnf-mods@main/fnaf2/">
+  <style>
+    html,body{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:#000}
+    #openfl-content{width:100%;height:100%;background:#000}
+    @font-face{font-family:'Pixel Arial 11 Bold';src:url('assets/fonts/pixel.woff') format('woff'),url('assets/fonts/pixel.otf') format('truetype')}
+    @font-face{font-family:'VCR OSD Mono';src:url('assets/fonts/vcr.woff') format('woff'),url('assets/fonts/vcr.ttf') format('truetype')}
+    @font-face{font-family:'Nokia Cellphone FC Small';src:url('flixel/fonts/nokiafc22.woff') format('woff'),url('flixel/fonts/nokiafc22.ttf') format('truetype')}
+    @font-face{font-family:'Monsterrat';src:url('flixel/fonts/monsterrat.woff') format('woff'),url('flixel/fonts/monsterrat.ttf') format('truetype')}
+  </style>
+  <script src="./PsychEngine.js"></script>
+</head>
+<body>
+  <noscript>Enable JavaScript to play this game.</noscript>
+  <div id="openfl-content"></div>
+  <script>
+    window.addEventListener("touchmove",function(event){event.preventDefault()},{passive:false});
+    if(typeof window.devicePixelRatio!=="undefined"&&window.devicePixelRatio>2){
+      const meta=document.querySelector('meta[name="viewport"]');
+      meta.setAttribute("content","width=device-width, initial-scale="+(2/window.devicePixelRatio)+",user-scalable=no");
+    }
+    window.addEventListener("keydown",function(e){
+      if(["Tab","Space","ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].includes(e.code)) e.preventDefault();
+    },false);
+    lime.embed("PsychEngine","openfl-content",1280,720,{parameters:{}});
+  </script>
+  <script src="./../sk.min.js?010723"></script>
+</body>
+</html>
