@@ -174,5 +174,13 @@
     "icon": "🏍️",
     "description": "Race your dirt bike through wild obstacle courses and stunts.",
     "iframe": "https://play.famobi.com/moto-x3m/A-FAK0S"
+  },
+  {
+    "id": "polytrack",
+    "title": "PolyTrack",
+    "category": "racing",
+    "icon": "🏎️",
+    "description": "Build and race on fast, low-poly tracks.",
+    "iframe": "https://app-polytrack.kodub.com/0.6.3/?"
   }
 ]
