@@ -55,7 +55,7 @@ function renderGames() {
         <div class="game-row-track">
           ${row.games.map(game => `
             <article class="game-card">
-              <div class="game-card-art"><span>${escapeHtml(game.icon || "🎮")}</span><small>${escapeHtml(row.name.toUpperCase())}</small></div>
+              <div class="game-card-art">${game.image ? '<img src="' + escapeHtml(game.image) + '" alt="' + escapeHtml(game.title) + ' screenshot" loading="lazy">' : '<span>' + escapeHtml(game.icon || "🎮") + '</span>'}<small>${escapeHtml(row.name.toUpperCase())} </small></div>
               <div class="game-category">${escapeHtml(game.category)}</div>
               <h4>${escapeHtml(game.title)}</h4>
               <p>${escapeHtml(game.description || "")}</p>
