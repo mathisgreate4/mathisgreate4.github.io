@@ -182,5 +182,13 @@
     "icon": "🏎️",
     "description": "Build and race on fast, low-poly tracks.",
     "iframe": "https://app-polytrack.kodub.com/0.6.3/?"
+  },
+  {
+    "id": "speed-stars",
+    "title": "Speed Stars",
+    "category": "sports",
+    "icon": "🏃",
+    "description": "Sprint, time your strides, and race for the fastest finish.",
+    "iframe": "https://cdn.myunblockedgames.com/games/speed-stars/index.html"
   }
 ]
