@@ -45,15 +45,6 @@
     "image": "https://www.mobygames.com/images/shots/l/555563-minecraft-classic-browser-screenshot-ditto-generic-shot.jpg"
   },
   {
-    "id": "neon-roll",
-    "title": "Neon Roll",
-    "category": "arcade",
-    "icon": "🔮",
-    "description": "Dodge neon obstacles in an original Slope-style arcade runner.",
-    "iframe": "games/neon-roll/",
-    "image": "https://imgs2.dab3games.com/slope-racing-3d-game-ft.png"
-  },
-  {
     "id": "run-3",
     "title": "Run 3",
     "category": "arcade",
