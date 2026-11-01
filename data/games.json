@@ -23,7 +23,8 @@
     "category": "sports",
     "icon": "🏈",
     "description": "Fast arcade-style football action.",
-    "iframe": "https://footballbros.io/"
+    "iframe": "https://footballbros.io/",
+    "image": "https://footballbrosunblocked.online/assets/img/nfl-retro-bowl-25.jpg"
   },
   {
     "id": "slow-roads",
@@ -49,7 +50,8 @@
     "category": "arcade",
     "icon": "🔮",
     "description": "Dodge neon obstacles in an original Slope-style arcade runner.",
-    "iframe": "games/neon-roll/"
+    "iframe": "games/neon-roll/",
+    "image": "https://imgs2.dab3games.com/slope-racing-3d-game-ft.png"
   },
   {
     "id": "run-3",
@@ -102,7 +104,8 @@
     "category": "sports",
     "icon": "🏀",
     "description": "Play fast-paced arcade basketball and take on opponents.",
-    "iframe": "https://the-pizza-editionfree.github.io/lesson302/lesson-108"
+    "iframe": "https://the-pizza-editionfree.github.io/lesson302/lesson-108",
+    "image": "https://slopeio.org/data/image/players-need-to-quickly-bring-the-ball-to-the-opponents-court-to-quickly-score-a-round-goal-basketballbros.jpg"
   },
   {
     "id": "eggy-car",
@@ -128,7 +131,8 @@
     "category": "sports",
     "icon": "🏀",
     "description": "Play arcade basketball and battle for the winning shot.",
-    "iframe": "https://the-pizza-editionfree.github.io/lesson306/lesson-242"
+    "iframe": "https://the-pizza-editionfree.github.io/lesson306/lesson-242",
+    "image": "https://imgdownload.juxia.com/upload/202410/31/0306eklGj0Y4UIC.webp"
   },
   {
     "id": "cat-gunner",
@@ -136,7 +140,8 @@
     "category": "arcade",
     "icon": "🐱",
     "description": "Take on waves of zombies in this action-packed cat shooter.",
-    "iframe": "https://the-pizza-editionfree.github.io/lesson302/lesson-62"
+    "iframe": "https://the-pizza-editionfree.github.io/lesson302/lesson-62",
+    "image": "https://minireview.io/common/uploads/review/c325b13d90bca18fb7ae4a936ad70fe5.jpg"
   },
   {
     "id": "awesome-tanks",
@@ -144,7 +149,8 @@
     "category": "arcade",
     "icon": "🛡️",
     "description": "Drive your tank, blast enemies, and upgrade your firepower.",
-    "iframe": "https://77pen.github.io/p/awesome-tanks"
+    "iframe": "https://77pen.github.io/p/awesome-tanks",
+    "image": "https://i.ytimg.com/vi/lncDXocQoRs/maxresdefault.jpg"
   },
   {
     "id": "awesome-tanks-2",
@@ -152,7 +158,8 @@
     "category": "arcade",
     "icon": "💥",
     "description": "Battle through more tank levels, enemies, and upgrades.",
-    "iframe": "https://77pen.github.io/p/awesome-tanks-2"
+    "iframe": "https://77pen.github.io/p/awesome-tanks-2",
+    "image": "https://img.crazygames-poki.com/a1e73ee0e250cddeab9f6c710f1e43b5.jpg"
   },
   {
     "id": "chicken-merge",
@@ -160,7 +167,8 @@
     "category": "puzzle",
     "icon": "🐔",
     "description": "Merge chickens to create new and bigger birds.",
-    "iframe": "https://labgstore311.github.io/g9/class-641/"
+    "iframe": "https://labgstore311.github.io/g9/class-641/",
+    "image": "https://cdn.soft112.com/chicken-evolution-clicker-game-of-the-mutant-farm-ios/00/00/0G/96/00000G9601/pad_screenshot_4Z0F4Z8X8E.png"
   },
   {
     "id": "super-liquid-soccer",
@@ -168,7 +176,8 @@
     "category": "sports",
     "icon": "⚽",
     "description": "Play fast-paced soccer matches with fluid, arcade-style action.",
-    "iframe": "https://the-pizza-editionfree.github.io/lesson302/lesson-50"
+    "iframe": "https://the-pizza-editionfree.github.io/lesson302/lesson-50",
+    "image": "https://gamesdoodle.org/images/super-liquid-soccer.webp"
   },
   {
     "id": "ragdoll-archers",
@@ -194,7 +203,8 @@
     "category": "racing",
     "icon": "🏎️",
     "description": "Build and race on fast, low-poly tracks.",
-    "iframe": "https://app-polytrack.kodub.com/0.6.3/?"
+    "iframe": "https://app-polytrack.kodub.com/0.6.3/?",
+    "image": "https://img.itch.zone/aW1hZ2UvMTgyOTg5My8yNjA1MTU4MS5wbmc%3D/original/QMf1FB.png"
   },
   {
     "id": "speed-stars",
@@ -202,7 +212,8 @@
     "category": "sports",
     "icon": "🏃",
     "description": "Sprint, time your strides, and race for the fastest finish.",
-    "iframe": "https://cdn.myunblockedgames.com/games/speed-stars/index.html"
+    "iframe": "https://cdn.myunblockedgames.com/games/speed-stars/index.html",
+    "image": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource115/v4/ce/8c/24/ce8c2400-47bb-4c40-0dfc-6dbe122f63db/65f0cc81-0215-4dfb-a843-c31523f1ed27_image-006.png/750x750bb.jpeg"
   },
   {
     "id": "poop-clicker",
