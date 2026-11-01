@@ -190,5 +190,13 @@
     "icon": "🏃",
     "description": "Sprint, time your strides, and race for the fastest finish.",
     "iframe": "https://cdn.myunblockedgames.com/games/speed-stars/index.html"
+  },
+  {
+    "id": "poop-clicker",
+    "title": "Poop Clicker",
+    "category": "arcade",
+    "icon": "💩",
+    "description": "Click your way through a silly idle clicker game.",
+    "iframe": "https://www.onlinegames.io/games/2024/construct/292/poop-clicker/index.html"
   }
 ]
