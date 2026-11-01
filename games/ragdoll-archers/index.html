@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <base href="https://cdn.jsdelivr.net/gh/ltorl/dancing-bunny-games@main/">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Ragdoll Archers</title>
+  <script>
+    (function() {
+      var BASE = "https://cdn.jsdelivr.net/gh/ltorl/dancing-bunny-games@main/";
+      var HREF = BASE + "ragdollarchers.html";
+      var NativeURL = window.URL;
+      window.__DB_HREF__ = HREF;
+      try { Object.defineProperty(document, "URL", { configurable: true, get: function() { return HREF; } }); } catch (e) {}
+      try { Object.defineProperty(document, "documentURI", { configurable: true, get: function() { return HREF; } }); } catch (e) {}
+      function fixBase(base) {
+        return (base !== undefined && String(base).indexOf("about:") === 0) ? BASE : base;
+      }
+      window.URL = class extends NativeURL {
+        constructor(url, base) {
+          if (arguments.length < 2) super(url);
+          else super(url, fixBase(base));
+        }
+      };
+      if (NativeURL.canParse) window.URL.canParse = function(url, base) { return NativeURL.canParse(url, fixBase(base)); };
+      if (NativeURL.parse) window.URL.parse = function(url, base) { return NativeURL.parse(url, fixBase(base)); };
+    })();
+  </script>
+  <script src="https://cdn.jsdelivr.net/gh/laparda14/Ragdoll-archers@62504c9570ea720c6367e7debe1e110c68f77c2d/vs/gameloader-helper.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bubbls/ruffle@04dd5345a30d6ebf4b0e2cc385568750cd56ed5a/styyyle.css">
+  <style>
+    html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: #000; }
+    #unity-container { width: 100%; height: 100%; }
+    #unity-canvas { width: 100%; height: 100%; display: block; background: #000; }
+    #loading-cover { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: #000; }
+    #unity-loading-bar { width: min(80%, 420px); text-align: center; }
+    #unity-logo img { max-width: 180px; max-height: 100px; object-fit: contain; }
+    .progress-spinner-container { display: flex; align-items: center; gap: 12px; margin-top: 20px; }
+    .spinner-left img, .spinner-right img { width: 24px; height: 24px; }
+    #unity-progress-bar-empty { flex: 1; height: 8px; background: #333; border-radius: 8px; overflow: hidden; }
+    #unity-progress-bar-full { width: 0; height: 100%; background: #7c3aed; }
+  </style>
+</head>
+<body>
+  <div id="unity-container" class="unity-desktop">
+    <canvas id="unity-canvas" tabindex="-1"></canvas>
+  </div>
+  <div id="loading-cover">
+    <div id="unity-loading-bar">
+      <div id="unity-logo"><img src="logo.jpeg" alt=""></div>
+      <div class="progress-spinner-container">
+        <div class="spinner-left"><img src="spinner.png" alt=""></div>
+        <div id="unity-progress-bar-empty"><div id="unity-progress-bar-full"></div></div>
+        <div class="spinner-right"><img src="spinner.png" alt=""></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const loaderUrl = "https://cdn.jsdelivr.net/gh/bubbls/ruffle@7117cc5006472d782b65d96abd375597d6273242/v11121212.js";
+    const config = {
+      dataUrl: "https://cdn.jsdelivr.net/gh/bubbls/ruffle@04dd5345a30d6ebf4b0e2cc385568750cd56ed5a/6697b6deba8b617c67b69c55dcd07cb1.data.unityweb",
+      frameworkUrl: "https://cdn.jsdelivr.net/gh/bubbls/ruffle@04dd5345a30d6ebf4b0e2cc385568750cd56ed5a/0be3c3ee7115b26e1ae28e643afdf1f2.js.unityweb",
+      codeUrl: "https://cdn.jsdelivr.net/gh/bubbls/ruffle@04dd5345a30d6ebf4b0e2cc385568750cd56ed5a/b3397c29f6878557c1c614cbf9e196ea.wasm.unityweb",
+      streamingAssetsUrl: "StreamingAssets",
+      companyName: "Ericetto",
+      productName: "Ragdoll Archers",
+      productVersion: "0.1"
+    };
+    const container = document.querySelector("#unity-container");
+    const canvas = document.querySelector("#unity-canvas");
+    const loadingCover = document.querySelector("#loading-cover");
+    const progressBarEmpty = document.querySelector("#unity-progress-bar-empty");
+    const progressBarFull = document.querySelector("#unity-progress-bar-full");
+    if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) container.className = "unity-mobile";
+    const unityLoader = document.createElement("script");
+    unityLoader.src = loaderUrl;
+    unityLoader.onload = () => {
+      createUnityInstance(canvas, config, progress => {
+        progressBarEmpty.style.display = "";
+        progressBarFull.style.width = (100 * progress) + "%";
+      }).then(() => {
+        loadingCover.style.display = "none";
+      }).catch(error => {
+        loadingCover.innerHTML = '<div style="color:white;font:16px sans-serif;padding:24px;text-align:center">The game could not load. Please refresh and try again.<br><small>' + String(error) + '</small></div>';
+      });
+    };
+    unityLoader.onerror = () => {
+      loadingCover.innerHTML = '<div style="color:white;font:16px sans-serif;padding:24px;text-align:center">Could not load the game engine. Please refresh and try again.</div>';
+    };
+    document.body.appendChild(unityLoader);
+    document.addEventListener("pointerdown", () => {
+      container.focus();
+      window.focus();
+      canvas.focus();
+    });
+  </script>
+</body>
+</html>
