@@ -23,3 +23,13 @@
 .slide-arrow:hover{border-color:var(--accent);color:var(--accent)}
 .slide-arrow.prev{left:-8px}.slide-arrow.next{right:-8px}
 @media(max-width:500px){.game-row .game-card{flex-basis:82vw}.slide-arrow{width:32px}}
+
+/* Movies section */
+.movies-section{padding:12px 0 65px;scroll-margin-top:20px}
+.movie-card{display:grid;grid-template-columns:minmax(180px, .75fr) 1.25fr;gap:24px;align-items:center;padding:20px;border:1px solid var(--line);border-radius:17px;background:linear-gradient(120deg,#1c2230,#171c27)}
+.movie-art{min-height:220px;border-radius:12px;background:radial-gradient(circle at 50% 35%,#a7f36b38,transparent 48%),linear-gradient(145deg,#35485a,#1a2230);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px}
+.movie-art span{font-size:4rem}.movie-art small{font-size:.65rem;letter-spacing:2px;color:#d3decf;font-weight:900}
+.movie-info h3{margin:3px 0 7px;font-size:clamp(1.4rem,3vw,2rem);letter-spacing:-.04em}
+.movie-info>p:not(.eyebrow){color:var(--muted);margin:7px 0}
+.movie-info .movie-note{max-width:600px;font-size:.88rem}
+@media(max-width:650px){.movie-card{grid-template-columns:1fr}.movie-art{min-height:170px}}
