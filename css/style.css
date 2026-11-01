@@ -33,3 +33,8 @@
 .movie-info>p:not(.eyebrow){color:var(--muted);margin:7px 0}
 .movie-info .movie-note{max-width:600px;font-size:.88rem}
 @media(max-width:650px){.movie-card{grid-template-columns:1fr}.movie-art{min-height:170px}}
+
+.movie-card-player{grid-template-columns: minmax(240px,.8fr) minmax(0,1.2fr)}
+.movie-video-wrap{width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:12px;background:#050608}
+.movie-video-wrap iframe{display:block;width:100%;height:100%;border:0}
+@media(max-width:650px){.movie-card-player{grid-template-columns:1fr}.movie-video-wrap{min-height:220px}}
