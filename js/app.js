@@ -3,6 +3,7 @@ const slideshows = [
   { name: "Racing", category: "racing" },
   { name: "Worlds", category: "worlds" },
   { name: "Arcade", category: "arcade" },
+  { name: "Clicker", category: "clicker" },
   { name: "Puzzle", category: "puzzle" }
 ];
 const container = document.querySelector("#game-slideshows");
