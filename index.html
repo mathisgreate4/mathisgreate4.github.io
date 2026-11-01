@@ -12,7 +12,7 @@
 <body>
   <header class="site-header">
     <a class="logo" href="#" aria-label="Matheise4 home"><span class="logo-mark">M</span> Matheise4</a>
-    <nav><a href="#games">Games</a><a href="#about">About</a></nav>
+    <nav><a href="#games">Games</a><a href="#videos">Videos</a><a href="#about">About</a></nav>
   </header>
   <main class="container">
     <section class="hero">
@@ -51,6 +51,29 @@
         <div class="frame-wrap"><iframe id="game-frame" title="Selected game" src="about:blank" allow="fullscreen; autoplay; gamepad; clipboard-read; clipboard-write" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
         <p id="player-message" class="player-message">Some game websites block being embedded. If the game does not load, use New tab.</p>
       </section>
+    </section>
+
+    <section id="videos" class="videos-section">
+      <div class="section-heading">
+        <div><p class="eyebrow">VIDEO LIBRARY</p><h2>Watch videos</h2></div>
+        <span class="game-count">Featured video</span>
+      </div>
+      <article class="video-card">
+        <div class="video-player-wrap">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/_c2e1NcI3Sc"
+            title="Featured YouTube video"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div class="video-details">
+          <h3>Featured YouTube video</h3>
+          <p>If the player does not load, the video may not allow embedding or YouTube may be restricted on this network.</p>
+          <a class="primary-button" href="https://www.youtube.com/watch?v=_c2e1NcI3Sc" target="_blank" rel="noopener noreferrer">Open on YouTube ↗</a>
+        </div>
+      </article>
     </section>
 
     <section id="about" class="about-section">
