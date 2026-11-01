@@ -1,22 +1,11 @@
-const slideshows = [
-  { name: "Sports", category: "sports" },
-  { name: "Racing", category: "racing" },
-  { name: "Worlds", category: "worlds" },
-  { name: "Arcade", category: "arcade" },
-  { name: "Clicker", category: "clicker" },
-  { name: "Puzzle", category: "puzzle" },
-  { name: "Scary", category: "scary" }
-];
 const container = document.querySelector("#game-slideshows");
 const searchInput = document.querySelector("#game-search");
-const filters = document.querySelector("#category-filters");
 const countLabel = document.querySelector("#game-count");
 const player = document.querySelector("#player");
 const frame = document.querySelector("#game-frame");
 const playerTitle = document.querySelector("#player-title");
 const newTabButton = document.querySelector("#new-tab-button");
 let games = [];
-let activeCategory = "all";
 
 async function loadGames() {
   try {
@@ -33,52 +22,31 @@ async function loadGames() {
 
 function renderGames() {
   const query = searchInput.value.trim().toLowerCase();
-  const visible = games.filter(game => {
-    const matchesCategory = activeCategory === "all" || game.category === activeCategory;
-    const searchable = (game.title + " " + game.description + " " + game.category).toLowerCase();
-    return matchesCategory && searchable.includes(query);
-  });
+  const visible = games.filter(game =>
+    (game.title + " " + (game.description || "")).toLowerCase().includes(query)
+  );
   countLabel.textContent = visible.length + (visible.length === 1 ? " game" : " games");
   if (!visible.length) {
     container.innerHTML = '<div class="empty-state">No games found. Try another search.</div>';
     return;
   }
 
-  const groups = activeCategory === "all"
-    ? slideshows.map(row => ({...row, games: visible.filter(game => game.category === row.category)})).filter(row => row.games.length)
-    : [{name: activeCategory[0].toUpperCase() + activeCategory.slice(1), category: activeCategory, games: visible}];
-
-  container.innerHTML = groups.map(row => `
-    <section class="game-row">
-      <div class="game-row-heading"><h3>${escapeHtml(row.name)} Games</h3><span>${row.games.length} available</span></div>
-      <div class="game-row-track-wrap">
-        <button class="slide-arrow prev" type="button" aria-label="Scroll ${escapeHtml(row.name)} left">‹</button>
-        <div class="game-row-track">
-          ${row.games.map(game => `
-            <article class="game-card">
-              <div class="game-card-art"><span class="game-card-fallback">${escapeHtml(game.icon || "🎮")}</span>${game.image ? '<img src="' + escapeHtml(game.image) + '" alt="' + escapeHtml(game.title) + ' screenshot" loading="lazy" onerror="this.remove()">' : ''}<small>${escapeHtml(row.name.toUpperCase())}</small></div>
-              <div class="game-category">${escapeHtml(game.category)}</div>
-              <h4>${escapeHtml(game.title)}</h4>
-              <p>${escapeHtml(game.description || "")}</p>
-              <button class="play-button" type="button" data-game-id="${escapeHtml(game.id)}">Play game ↗</button>
-            </article>
-          `).join("")}
-        </div>
-        <button class="slide-arrow next" type="button" aria-label="Scroll ${escapeHtml(row.name)} right">›</button>
+  container.innerHTML = visible.map(game => `
+    <article class="game-card">
+      <div class="game-card-art">
+        <span class="game-card-fallback">${escapeHtml(game.icon || "🎮")}</span>
+        ${game.image ? '<img src="' + escapeHtml(game.image) + '" alt="' + escapeHtml(game.title) + ' screenshot" loading="lazy" onerror="this.remove()">' : ''}
       </div>
-    </section>
+      <h3>${escapeHtml(game.title)}</h3>
+      <p>${escapeHtml(game.description || "")}</p>
+      <button class="play-button" type="button" data-game-id="${escapeHtml(game.id)}">Play game ↗</button>
+    </article>
   `).join("");
 
   container.querySelectorAll("[data-game-id]").forEach(button => {
     button.addEventListener("click", () => {
       const selected = games.find(game => game.id === button.dataset.gameId);
       if (selected) openGame(selected);
-    });
-  });
-  container.querySelectorAll(".slide-arrow").forEach(button => {
-    button.addEventListener("click", () => {
-      const track = button.parentElement.querySelector(".game-row-track");
-      track.scrollBy({left: button.classList.contains("prev") ? -330 : 330, behavior:"smooth"});
     });
   });
 }
@@ -99,13 +67,6 @@ function openGame(game) {
 }
 
 searchInput.addEventListener("input", renderGames);
-filters.addEventListener("click", event => {
-  const button = event.target.closest("[data-category]");
-  if (!button) return;
-  activeCategory = button.dataset.category;
-  filters.querySelectorAll(".filter").forEach(item => item.classList.toggle("active", item === button));
-  renderGames();
-});
 document.querySelector("#close-button").addEventListener("click", () => {
   frame.src = "about:blank";
   player.hidden = true;
