@@ -38,3 +38,9 @@
 .movie-video-wrap{width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:12px;background:#050608}
 .movie-video-wrap iframe{display:block;width:100%;height:100%;border:0}
 @media(max-width:650px){.movie-card-player{grid-template-columns:1fr}.movie-video-wrap{min-height:220px}}
+
+/* Game artwork thumbnails */
+.game-card-art{position:relative;overflow:hidden;min-height:130px;height:130px;padding:0;justify-content:center;background:#121722}
+.game-card-art img{width:100%;height:100%;object-fit:cover;display:block}
+.game-card-art span{position:absolute;left:14px;top:12px;font-size:2rem;text-shadow:0 2px 8px #000}
+.game-card-art small{position:absolute;right:10px;bottom:9px;padding:4px 7px;border-radius:5px;background:#10131ccc;color:#dce6dc}
