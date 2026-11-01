@@ -265,5 +265,13 @@
     "icon": "⚾",
     "description": "Play fast-paced baseball, hit home runs, and steal bases.",
     "iframe": "https://baseballbros.io/"
+  },
+  {
+    "id": "five-nights-at-freddys-1",
+    "title": "Five Nights at Freddy's 1",
+    "category": "arcade",
+    "icon": "🐻",
+    "description": "Survive five nights at Freddy Fazbear's Pizza.",
+    "iframe": "https://cdn.jsdelivr.net/gh/blazerida/fnaf@latest/1/"
   }
 ]
