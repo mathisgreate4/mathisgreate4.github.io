@@ -194,9 +194,25 @@
   {
     "id": "poop-clicker",
     "title": "Poop Clicker",
-    "category": "arcade",
+    "category": "clicker",
     "icon": "💩",
     "description": "Click your way through a silly idle clicker game.",
     "iframe": "https://www.onlinegames.io/games/2024/construct/292/poop-clicker/index.html"
+  },
+  {
+    "id": "cookie-clicker",
+    "title": "Cookie Clicker",
+    "category": "clicker",
+    "icon": "🍪",
+    "description": "Bake cookies, buy upgrades, and build a giant cookie empire.",
+    "iframe": "https://orteil.dashnet.org/cookieclicker/"
+  },
+  {
+    "id": "idle-breakout",
+    "title": "Idle Breakout",
+    "category": "clicker",
+    "icon": "🧱",
+    "description": "Break bricks, earn upgrades, and automate your progress.",
+    "iframe": "https://idle-breakout.github.io/"
   }
 ]
