@@ -4,7 +4,8 @@ const slideshows = [
   { name: "Worlds", category: "worlds" },
   { name: "Arcade", category: "arcade" },
   { name: "Clicker", category: "clicker" },
-  { name: "Puzzle", category: "puzzle" }
+  { name: "Puzzle", category: "puzzle" },
+  { name: "Scary", category: "scary" }
 ];
 const container = document.querySelector("#game-slideshows");
 const searchInput = document.querySelector("#game-search");
