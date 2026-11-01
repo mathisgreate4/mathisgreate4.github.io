@@ -272,6 +272,6 @@
     "category": "arcade",
     "icon": "🐻",
     "description": "Survive five nights at Freddy Fazbear's Pizza.",
-    "iframe": "https://cdn.jsdelivr.net/gh/blazerida/fnaf@latest/1/"
+    "iframe": "games/fnaf1/"
   }
 ]
