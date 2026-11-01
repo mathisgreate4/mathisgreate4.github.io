@@ -241,13 +241,5 @@
     "description": "Bake cookies, buy upgrades, and build a giant cookie empire.",
     "iframe": "https://cloud.onlinegames.io/cdn/index.html#/class3/cookie-clicker",
     "image": "https://images.sftcdn.net/images/t_app-cover-l%2Cf_auto/p/d43fb770-96d1-11e6-a225-00163ec9f5fa/3493146967/cookie-clicker-screenshot.png"
-  },
-  {
-    "id": "granny",
-    "title": "Granny",
-    "category": "scary",
-    "icon": "👵",
-    "description": "Escape the house, solve puzzles, and avoid Granny.",
-    "iframe": "https://app-307198.games.s3.yandex.net/307198/dh5j5bw8jreyyvj0jgfmsgf434ycwr1w/index.html?is-united-page=1&skip-guard=1&header=no&clid=8531463&sdk=%2Fsdk%2F_%2Fv2.2f14a50521d68e9766e1.js#origin=https%3A%2F%2Fplayhop.com&app-id=307198&device-type=desktop"
   }
 ]
