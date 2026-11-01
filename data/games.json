@@ -273,5 +273,13 @@
     "icon": "🐻",
     "description": "Survive five nights at Freddy Fazbear's Pizza.",
     "iframe": "games/fnaf1/"
+  },
+  {
+    "id": "five-nights-at-freddys-2",
+    "title": "Five Nights at Freddy's 2",
+    "category": "arcade",
+    "icon": "🎭",
+    "description": "Survive the night shift at Freddy Fazbear's Pizza in FNAF 2.",
+    "iframe": "games/fnaf2/"
   }
 ]
