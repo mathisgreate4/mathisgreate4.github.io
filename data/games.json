@@ -197,7 +197,8 @@
     "category": "clicker",
     "icon": "💩",
     "description": "Click your way through a silly idle clicker game.",
-    "iframe": "https://www.onlinegames.io/games/2024/construct/292/poop-clicker/index.html"
+    "iframe": "https://www.onlinegames.io/games/2024/construct/292/poop-clicker/index.html",
+    "image": "https://aga.clickerspacebar.com/games/poop-clicker/4.webp"
   },
   {
     "id": "cookie-clicker",
@@ -205,7 +206,8 @@
     "category": "clicker",
     "icon": "🍪",
     "description": "Bake cookies, buy upgrades, and build a giant cookie empire.",
-    "iframe": "https://orteil.dashnet.org/cookieclicker/"
+    "iframe": "https://orteil.dashnet.org/cookieclicker/",
+    "image": "https://i.blogs.es/fe4d59/screenshot6/840_560.png"
   },
   {
     "id": "idle-breakout",
@@ -213,6 +215,7 @@
     "category": "clicker",
     "icon": "🧱",
     "description": "Break bricks, earn upgrades, and automate your progress.",
-    "iframe": "https://idle-breakout.github.io/"
+    "iframe": "https://idle-breakout.github.io/",
+    "image": "https://kotaku.com/igdb/image/upload/t_720p/sck9pb.jpg"
   }
 ]
