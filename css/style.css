@@ -99,3 +99,62 @@ footer span:first-child{color:var(--red);font-weight:950;letter-spacing:1.5px}
 .game-card .game-category{display:inline-block;margin-top:10px}
 .game-card-art .game-card-fallback{z-index:0}
 .game-card-art img{position:relative;z-index:1}
+
+
+/* THE ARENA: high-contrast gaming redesign */
+:root{--bg:#07070a;--panel:#101015;--panel2:#191920;--line:#30303a;--red:#ff2638;--red2:#8e0719;--glow:0 0 42px #ff26382b}
+body{background-color:#07070a;background-image:linear-gradient(#ffffff03 1px,transparent 1px),linear-gradient(90deg,#ffffff03 1px,transparent 1px);background-size:42px 42px}
+body:before{background:radial-gradient(ellipse at 12% 8%,#c10d282e,transparent 32%),radial-gradient(ellipse at 90% 38%,#8b102020,transparent 34%),linear-gradient(180deg,transparent 55%,#07070a)}
+.site-header{height:72px;background:#08080def;border-bottom:1px solid #ff26382b}
+.logo{font-size:1.2rem;letter-spacing:.3px;text-transform:uppercase}.logo-mark{border-radius:9px;transform:skew(-7deg);box-shadow:0 0 24px #ff263866}
+.site-header nav a{font-size:.78rem;text-transform:uppercase;letter-spacing:1.3px}
+.hero{min-height:490px;padding-top:86px;padding-bottom:75px}
+.hero h1{font-size:clamp(4rem,8.5vw,7.4rem);text-transform:uppercase;letter-spacing:-.095em;text-shadow:0 12px 60px #000}
+.hero h1 span{color:#ff2638;text-shadow:0 0 38px #ff26386b}
+.hero-subtitle{font-size:1.04rem;max-width:520px}
+.hero-kicker{margin:14px 0 0;color:#ff6571;font-size:.68rem;font-weight:950;letter-spacing:3px}
+.primary-button{border-radius:7px;letter-spacing:1.1px;text-transform:uppercase;background:linear-gradient(110deg,#ff3447,#a9001c);border:1px solid #ff6675;box-shadow:0 0 30px #ff26383d,0 10px 28px #0009}
+.art-card{border-radius:13px}.card-front{background:linear-gradient(145deg,#3a101a,#0b0b10);border-color:#ff344780;box-shadow:0 25px 80px #000,0 0 35px #ff26382b}
+.art-orbit{border-color:#ff344780}
+.games-section,.videos-section,.movies-section{position:relative}
+.section-heading h2,.player-heading h2,.about-section h2{letter-spacing:-.07em;text-transform:uppercase}
+.game-card{border-radius:10px;background:linear-gradient(145deg,#19191f,#0d0d12);border-color:#34313a;box-shadow:0 10px 30px #0005}
+.game-card:hover{border-color:#ff3447;box-shadow:0 12px 36px #000,var(--glow)}
+.game-card-art{border-radius:7px;background:linear-gradient(140deg,#281018,#101015)}
+.play-button{border-radius:6px;text-transform:uppercase;letter-spacing:.7px;font-size:.72rem;background:#2b0e15;border-color:#a51a2b;color:#ff7c87}
+.player,.video-card,.movie-card{border-radius:10px;border-color:#4b1c27;background:linear-gradient(140deg,#151319,#0b0b10)}
+.frame-wrap,.video-player-wrap,.movie-video-wrap{border-radius:7px;border-color:#4c1c28}
+.category-chip{border-radius:6px;text-transform:uppercase;letter-spacing:.8px;font-size:.7rem}
+.rewards-section{position:relative;margin:10px 0 70px;padding:25px;border:1px solid #68202e;border-radius:13px;background:linear-gradient(135deg,#171016 0%,#0c0c12 58%,#160b10 100%);box-shadow:0 22px 70px #0008,0 0 45px #ff263812;overflow:hidden}
+.rewards-section:after{content:"";position:absolute;right:-100px;top:-150px;width:400px;height:400px;border:1px solid #ff34472b;border-radius:50%;box-shadow:0 0 0 35px #ff34470a,0 0 0 75px #ff344707;pointer-events:none}
+.rewards-topline,.console-head,.shop-heading{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.live-dot{color:#ff6470;font-size:.65rem;font-weight:950;letter-spacing:1.5px}
+.live-dot:first-letter{color:#ff2638}
+.rewards-layout{position:relative;z-index:1;display:grid;grid-template-columns:1.1fr .9fr;gap:35px;align-items:center;padding:15px 0 28px}
+.rewards-copy h2{margin:0;font-size:clamp(2.8rem,6vw,5rem);line-height:.92;letter-spacing:-.085em;font-weight:1000}
+.rewards-copy h2 span{color:var(--red);text-shadow:0 0 30px #ff26384a}
+.rewards-copy>p{max-width:480px;color:#aaa5af;font-size:.91rem}
+.reward-stats{display:flex;gap:25px;flex-wrap:wrap;margin-top:24px}
+.reward-stat{display:flex;flex-direction:column;gap:2px}.reward-stat small{color:#8e8994;font-size:.59rem;font-weight:900;letter-spacing:1.5px}.reward-stat strong{font-size:1.7rem;letter-spacing:-1px;color:#fff}
+.reward-stat:first-child strong{color:#ff5a68}
+.reward-console{padding:20px;border:1px solid #5b2732;border-radius:9px;background:linear-gradient(150deg,#1c151b,#0a0a0e);box-shadow:inset 0 0 35px #ff26380b,0 12px 40px #0008}
+.console-head{color:#bdb5bf;font-size:.62rem;font-weight:900;letter-spacing:1.2px}
+#reward-status{color:#ff6975}
+.console-emblem{display:grid;place-items:center;width:65px;height:65px;margin:22px auto 10px;border:1px solid #ff4b5d77;border-radius:50%;background:#ff263816;color:#ff5362;font-size:2rem;box-shadow:0 0 35px #ff26382b}
+.console-label{text-align:center;color:#8f8992;font-size:.6rem;font-weight:900;letter-spacing:2px}
+.console-payout{text-align:center;font-size:2.8rem;font-weight:1000;letter-spacing:-2px;color:#fff}
+.console-payout span{font-size:.75rem;letter-spacing:2px;color:#ff6975}
+.progress-track{height:9px;overflow:hidden;border-radius:99px;background:#30232a}
+.progress-track span{display:block;width:0;height:100%;border-radius:99px;background:linear-gradient(90deg,#a9001c,#ff5262);box-shadow:0 0 16px #ff2638;transition:width .25s}
+.progress-caption{display:flex;justify-content:space-between;gap:8px;margin-top:8px;color:#a69da7;font-size:.58rem;font-weight:850;letter-spacing:.6px}
+.reward-notice{min-height:22px;margin:15px 0 0;color:#ff9ba3;font-size:.76rem;text-align:center}
+.shop-heading{margin:4px 0 13px}.shop-heading h3{margin:0;font-size:1.35rem;letter-spacing:-.04em}.shop-heading>span{color:#89838d;font-size:.59rem;font-weight:900;letter-spacing:1.3px}
+.reward-shop{position:relative;z-index:1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.shop-item{display:flex;align-items:center;gap:12px;min-width:0;padding:14px;border:1px solid #37303a;border-radius:8px;background:#111015}
+.shop-icon{font-size:1.65rem}.shop-item>div{flex:1;min-width:0}.shop-item small{display:block;color:#ff6673;font-size:.54rem;font-weight:900;letter-spacing:1.4px}.shop-item b{display:block;font-size:.78rem;letter-spacing:.3px}.shop-item p{margin:3px 0 0;color:#89838d;font-size:.68rem}
+.redeem-button{flex-shrink:0;padding:8px 10px;border:1px solid #8f2332;border-radius:5px;background:#2a1017;color:#ff8992;font-size:.61rem;font-weight:950;letter-spacing:.5px;cursor:pointer}
+.redeem-button:not(:disabled):hover{background:#d71931;color:white;box-shadow:0 0 20px #ff26383b}
+.redeem-button:disabled{opacity:.5;cursor:not-allowed}.redeem-button.owned{border-color:#4e744e;background:#142016;color:#8dd48d;opacity:1}
+.reward-footnote{position:relative;z-index:1;margin:14px 0 0;color:#716b75;font-size:.65rem}
+@media(max-width:850px){.rewards-layout{grid-template-columns:1fr}.reward-shop{grid-template-columns:1fr}.shop-item{min-height:78px}}
+@media(max-width:500px){.rewards-section{padding:17px;margin-bottom:48px}.rewards-copy h2{font-size:3.3rem}.reward-stats{gap:18px}.reward-stat strong{font-size:1.4rem}.shop-heading{align-items:flex-start;flex-direction:column;gap:4px}.shop-item{padding:11px}.redeem-button{font-size:.55rem;padding:7px}}
