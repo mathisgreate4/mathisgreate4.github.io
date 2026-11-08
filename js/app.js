@@ -145,12 +145,109 @@ function escapeHtml(value) {
   })[char]);
 }
 
+// Local playtime rewards: 10 coins for every full active minute.
+const REWARD_STORAGE_KEY = "m4-arena-rewards-v1";
+const REWARD_CATALOG = {
+  rising: { cost: 100, name: "RISING STAR" },
+  elite: { cost: 250, name: "REDLINE ELITE" },
+  legend: { cost: 500, name: "LEGEND MODE" }
+};
+let rewardData = loadRewardData();
+let activePlaySeconds = 0;
+let rewardTimer = null;
+
+function loadRewardData() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(REWARD_STORAGE_KEY) || "{}");
+    return {
+      coins: Math.max(0, Number(saved.coins) || 0),
+      totalSeconds: Math.max(0, Number(saved.totalSeconds) || 0),
+      progressSeconds: Math.max(0, Number(saved.progressSeconds) || 0) % 60,
+      owned: Array.isArray(saved.owned) ? saved.owned : []
+    };
+  } catch (error) {
+    return { coins: 0, totalSeconds: 0, progressSeconds: 0, owned: [] };
+  }
+}
+
+function saveRewardData() {
+  try { localStorage.setItem(REWARD_STORAGE_KEY, JSON.stringify(rewardData)); } catch (error) {}
+}
+
+function formatPlaytime(seconds) {
+  const hours = Math.floor(seconds / 3600);
+  const minutes = Math.floor((seconds % 3600) / 60);
+  return hours ? hours + "h " + minutes + "m" : minutes + "m";
+}
+
+function renderRewards() {
+  const coins = document.querySelector("#reward-coins");
+  if (!coins) return;
+  coins.textContent = rewardData.coins.toLocaleString();
+  document.querySelector("#reward-time").textContent = formatPlaytime(rewardData.totalSeconds);
+  document.querySelector("#reward-minutes").textContent = Math.floor(rewardData.totalSeconds / 60).toLocaleString();
+  document.querySelector("#reward-progress").style.width = (rewardData.progressSeconds / 60 * 100) + "%";
+  document.querySelector("#reward-progress-text").textContent =
+    Math.floor(rewardData.progressSeconds / 60) + ":" + String(rewardData.progressSeconds % 60).padStart(2, "0") + " / 1:00";
+  const status = document.querySelector("#reward-status");
+  status.textContent = !player.hidden && document.visibilityState === "visible" && document.hasFocus()
+    ? "EARNING COINS" : "WAITING FOR GAME";
+  document.querySelectorAll("[data-reward]").forEach(button => {
+    const reward = REWARD_CATALOG[button.dataset.reward];
+    const owned = rewardData.owned.includes(button.dataset.reward);
+    button.disabled = owned || rewardData.coins < reward.cost;
+    button.textContent = owned ? "UNLOCKED ✓" : rewardData.coins >= reward.cost ? "UNLOCK NOW" : reward.cost + " COINS";
+    button.classList.toggle("owned", owned);
+  });
+}
+
+function rewardTick() {
+  if (player.hidden || document.visibilityState !== "visible" || !document.hasFocus()) {
+    renderRewards();
+    return;
+  }
+  rewardData.totalSeconds += 1;
+  rewardData.progressSeconds += 1;
+  if (rewardData.progressSeconds >= 60) {
+    rewardData.progressSeconds = 0;
+    rewardData.coins += 10;
+    document.querySelector("#reward-notice").textContent = "✦ +10 COINS ADDED! Keep that streak going.";
+  }
+  saveRewardData();
+  renderRewards();
+}
+
+function startRewardTimer() {
+  if (rewardTimer) clearInterval(rewardTimer);
+  rewardTimer = setInterval(rewardTick, 1000);
+  renderRewards();
+}
+
+document.querySelectorAll("[data-reward]").forEach(button => {
+  button.addEventListener("click", () => {
+    const id = button.dataset.reward;
+    const reward = REWARD_CATALOG[id];
+    if (!reward || rewardData.owned.includes(id) || rewardData.coins < reward.cost) return;
+    rewardData.coins -= reward.cost;
+    rewardData.owned.push(id);
+    saveRewardData();
+    document.querySelector("#reward-notice").textContent = "✦ UNLOCKED: " + reward.name + "!";
+    renderRewards();
+  });
+});
+document.addEventListener("visibilitychange", renderRewards);
+window.addEventListener("focus", renderRewards);
+window.addEventListener("blur", renderRewards);
+startRewardTimer();
+
 function openGame(game) {
   playerTitle.textContent = game.title;
   frame.src = game.iframe;
   frame.title = game.title;
   newTabButton.href = game.iframe;
   player.hidden = false;
+  document.querySelector("#reward-notice").textContent = "Game launched. Your active playtime is counting.";
+  renderRewards();
   player.scrollIntoView({ behavior: "smooth", block: "start" });
   const message = document.querySelector("#player-message");
   message.textContent = "Game hosted by its source provider. If the provider blocks embedding, choose New tab.";
@@ -161,6 +258,8 @@ searchInput.addEventListener("input", renderGames);
 document.querySelector("#close-button").addEventListener("click", () => {
   frame.src = "about:blank";
   player.hidden = true;
+  document.querySelector("#reward-notice").textContent = "Game closed. Your earned coins are saved.";
+  renderRewards();
 });
 
 document.querySelector("#fullscreen-button").addEventListener("click", async () => {
