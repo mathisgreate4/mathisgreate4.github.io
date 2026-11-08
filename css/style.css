@@ -91,3 +91,11 @@ footer span:first-child{color:var(--red);font-weight:950;letter-spacing:1.5px}
 @media(max-width:700px){.video-card{grid-template-columns:1fr}}
 @media(max-width:650px){.movie-card,.movie-card-player{grid-template-columns:1fr}.movie-art{min-height:170px}.movie-video-wrap{min-height:220px}}
 @media(max-width:500px){.site-header{height:66px;padding:0 15px}.site-header nav{gap:14px;font-size:.8rem}.container{width:calc(100% - 30px)}.hero h1{font-size:3.55rem}.game-grid{grid-template-columns:1fr}.game-card{min-height:150px}.section-heading{align-items:flex-start;flex-direction:column;gap:5px}footer{padding:20px 15px;flex-direction:column}.game-row .game-card{flex-basis:82vw}.slide-arrow{width:32px}}
+
+/* Searchable category filters */
+.category-filters{display:flex;flex-wrap:wrap;gap:8px;margin-top:2px}
+.category-chip{padding:8px 13px;border:1px solid #35303a;border-radius:999px;background:#14131a;color:#b9b5bf;font-size:.8rem;font-weight:800;cursor:pointer;transition:background .18s,border-color .18s,color .18s}
+.category-chip:hover,.category-chip.active{border-color:#ff303b;background:#35151c;color:#fff;box-shadow:0 0 18px #ff303b20}
+.game-card .game-category{display:inline-block;margin-top:10px}
+.game-card-art .game-card-fallback{z-index:0}
+.game-card-art img{position:relative;z-index:1}
