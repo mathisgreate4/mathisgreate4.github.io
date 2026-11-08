@@ -4,29 +4,60 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#08090d">
-  <meta name="description" content="mathisgreate4 — games, videos, and more.">
-  <title>mathisgreate4 — Game Hub</title>
+  <meta name="description" content="MATHISGREATE4 — the gaming arena. Play games, earn coins, and unlock rewards.">
+  <title>MATHISGREATE4 — THE ARENA</title>
   <link rel="stylesheet" href="css/style.css">
   <script src="js/app.js" defer></script>
 </head>
 <body>
   <header class="site-header">
     <a class="logo" href="#" aria-label="mathisgreate4 home"><span class="logo-mark">M</span> mathisgreate4</a>
-    <nav><a href="#games">Games</a><a href="#videos">Videos</a><a href="#about">About</a></nav>
+    <nav><a href="#games">Games</a><a href="#rewards">Rewards</a><a href="#videos">Videos</a></nav>
   </header>
   <main class="container">
     <section class="hero">
       <div class="hero-copy">
         <p class="eyebrow">YOUR NEXT FAVORITE GAME IS HERE</p>
         <h1>Play more.<br><span>Scroll less.</span></h1>
-        <p class="hero-subtitle">A huge searchable game library with quick categories, fullscreen play, and a clean black-and-red look.</p>
-        <a class="primary-button" href="#games">Explore games <span aria-hidden="true">↓</span></a>
+        <p class="hero-subtitle">Your arena. Your grind. Earn coins every minute you play, unlock titles, and explore the massive game library.</p>
+        <a class="primary-button" href="#games">ENTER THE ARENA <span aria-hidden="true">↗</span></a>
+      <p class="hero-kicker">PLAY. EARN. UNLOCK. REPEAT.</p>
       </div>
       <div class="hero-art" aria-hidden="true">
         <div class="art-glow"></div><div class="art-card card-back"></div>
         <div class="art-card card-front"><span>✦</span><b>GAME<br>ON</b><small>MATHISGREATE4</small></div>
         <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
       </div>
+    </section>
+    <section id="rewards" class="rewards-section" aria-label="Playtime rewards">
+      <div class="rewards-topline"><span class="eyebrow">THE REWARD SYSTEM</span><span class="live-dot">● LIVE PLAYTIME</span></div>
+      <div class="rewards-layout">
+        <div class="rewards-copy">
+          <h2>EVERY MINUTE<br><span>PAYS OFF.</span></h2>
+          <p>Keep a game open and this tab active to earn coins. Stack them up and unlock exclusive player titles.</p>
+          <div class="reward-stats">
+            <div class="reward-stat"><small>YOUR COINS</small><strong id="reward-coins">0</strong></div>
+            <div class="reward-stat"><small>TOTAL PLAYTIME</small><strong id="reward-time">0m</strong></div>
+            <div class="reward-stat"><small>MINUTES PLAYED</small><strong id="reward-minutes">0</strong></div>
+          </div>
+        </div>
+        <div class="reward-console">
+          <div class="console-head"><span>◈ PLAYER PROGRESS</span><span id="reward-status">WAITING FOR GAME</span></div>
+          <div class="console-emblem">✦</div>
+          <div class="console-label">NEXT PAYOUT</div>
+          <div class="console-payout">+10 <span>COINS</span></div>
+          <div class="progress-track"><span id="reward-progress"></span></div>
+          <div class="progress-caption"><span id="reward-progress-text">0:00 / 1:00</span><span>1 MIN = 10 COINS</span></div>
+          <p id="reward-notice" class="reward-notice" aria-live="polite">Launch any game to start earning.</p>
+        </div>
+      </div>
+      <div class="shop-heading"><div><p class="eyebrow">THE DROP SHOP</p><h3>UNLOCK YOUR STATUS</h3></div><span>COINS NEVER EXPIRE</span></div>
+      <div class="reward-shop">
+        <article class="shop-item"><span class="shop-icon">⚡</span><div><small>PLAYER TITLE</small><b>RISING STAR</b><p>Show off your first grind.</p></div><button class="redeem-button" data-reward="rising" type="button">100 COINS</button></article>
+        <article class="shop-item"><span class="shop-icon">🔥</span><div><small>PLAYER TITLE</small><b>REDLINE ELITE</b><p>For the dedicated players.</p></div><button class="redeem-button" data-reward="elite" type="button">250 COINS</button></article>
+        <article class="shop-item"><span class="shop-icon">👑</span><div><small>PLAYER TITLE</small><b>LEGEND MODE</b><p>The ultimate flex.</p></div><button class="redeem-button" data-reward="legend" type="button">500 COINS</button></article>
+      </div>
+      <p class="reward-footnote">Playtime is counted while a game is open and this browser tab is visible and active. Progress is saved on this device.</p>
     </section>
     <section id="games" class="games-section">
       <div class="section-heading">
