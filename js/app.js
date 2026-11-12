@@ -271,4 +271,16 @@ document.querySelector("#fullscreen-button").addEventListener("click", async () 
   }
 });
 
+
+const videoSearch = document.querySelector("#video-search");
+const videoCards = Array.from(document.querySelectorAll("#video-list > .video-card"));
+if (videoSearch) {
+  videoSearch.addEventListener("input", () => {
+    const query = videoSearch.value.trim().toLowerCase();
+    videoCards.forEach(card => {
+      card.hidden = !card.textContent.toLowerCase().includes(query);
+    });
+  });
+}
+
 loadGames();
