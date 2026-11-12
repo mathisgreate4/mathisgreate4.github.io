@@ -12,7 +12,7 @@
 <body>
   <header class="site-header">
     <a class="logo" href="#" aria-label="mathisgreate4 home"><span class="logo-mark">M</span> mathisgreate4</a>
-    <nav><a href="#games">Games</a><a href="#rewards">Rewards</a><a href="#videos">Videos</a></nav>
+    <nav><a href="#games">Games</a><a href="#rewards">Rewards</a><a href="#videos">Videos</a><a href="#youtube-search">YouTube</a></nav>
   </header>
   <main class="container">
     <section class="hero">
@@ -84,6 +84,21 @@
         <div class="frame-wrap"><iframe id="game-frame" title="Selected game" src="about:blank" allow="fullscreen; autoplay; gamepad; clipboard-read; clipboard-write" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
         <p id="player-message" class="player-message">Some game websites block being embedded. If the game does not load, use New tab.</p>
       </section>
+    </section>
+
+    <section id="youtube-search" class="youtube-search-section">
+      <div class="section-heading">
+        <div><p class="eyebrow">YOUTUBE SEARCH</p><h2>Find your next video</h2></div>
+        <span class="game-count">Search videos & creators</span>
+      </div>
+      <form class="youtube-search-form" action="https://www.youtube.com/results" method="get" target="_blank" rel="noopener">
+        <label class="youtube-search-box">
+          <span aria-hidden="true">⌕</span>
+          <input type="search" name="search_query" placeholder="Search YouTube videos, channels, or creators…" autocomplete="off" required>
+        </label>
+        <button class="primary-button youtube-search-button" type="submit">SEARCH YOUTUBE ↗</button>
+      </form>
+      <p class="youtube-search-note">Search opens the matching YouTube results in a new tab. Videos that allow embedding can still play below.</p>
     </section>
 
     <section id="videos" class="videos-section">
