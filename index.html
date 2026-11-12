@@ -8,23 +8,13 @@
   <title>MATHISGREATE4 — THE ARENA</title>
   <link rel="stylesheet" href="css/style.css">
   <style>
-    .youtube-search-section{padding:30px 0 48px;scroll-margin-top:90px}
-    .youtube-search-form{display:flex;align-items:stretch;gap:12px;padding:18px;border:1px solid #4b1c27;border-radius:12px;background:linear-gradient(120deg,#171016,#0c0c12);box-shadow:0 12px 35px #0007}
-    .youtube-search-box{display:flex;align-items:center;gap:12px;flex:1;min-width:0;padding:0 16px;border:1px solid #63303a;border-radius:8px;background:#0b0b10;color:#ff5262}
-    .youtube-search-box:focus-within{border-color:#ff3447;box-shadow:0 0 0 3px #ff303b20}
-    .youtube-search-box span{font-size:1.8rem}
-    .youtube-search-box input{width:100%;min-width:0;padding:14px 0;border:0;outline:0;background:transparent;color:#f5f5f7;font:inherit}
-    .youtube-search-box input::placeholder{color:#85818b}
-    .youtube-search-button{justify-content:center;margin:0;cursor:pointer;white-space:nowrap}
-    .youtube-search-note{margin:10px 3px 0;color:#85818b;font-size:.78rem}
-    @media(max-width:600px){.youtube-search-form{flex-direction:column}.youtube-search-button{width:100%}}
   </style>
   <script src="js/app.js" defer></script>
 </head>
 <body>
   <header class="site-header">
     <a class="logo" href="#" aria-label="mathisgreate4 home"><span class="logo-mark">M</span> mathisgreate4</a>
-    <nav><a href="#games">Games</a><a href="#rewards">Rewards</a><a href="#videos">Videos</a><a href="#youtube-search">YouTube</a></nav>
+    <nav><a href="#games">Games</a><a href="#rewards">Rewards</a><a href="#videos">Videos</a></nav>
   </header>
   <main class="container">
     <section class="hero">
@@ -98,22 +88,17 @@
       </section>
     </section>
 
-    <section id="youtube-search" class="youtube-search-section">
-      <div class="section-heading">
-        <div><p class="eyebrow">YOUTUBE SEARCH</p><h2>Find your next video</h2></div>
-        <span class="game-count">Search videos & creators</span>
-      </div>
-      <form class="youtube-search-form" action="https://www.youtube.com/results" method="get" target="_blank" rel="noopener">
-        <label class="youtube-search-box">
-          <span aria-hidden="true">⌕</span>
-          <input type="search" name="search_query" placeholder="Search YouTube videos, channels, or creators…" autocomplete="off" required>
-        </label>
-        <button class="primary-button youtube-search-button" type="submit">SEARCH YOUTUBE ↗</button>
-      </form>
-      <p class="youtube-search-note">Search opens the matching YouTube results in a new tab. Videos that allow embedding can still play below.</p>
-    </section>
-
     <section id="videos" class="videos-section">
+      <div class="section-heading">
+        <div><p class="eyebrow">VIDEO LIBRARY</p><h2>Find a video</h2></div>
+        <span class="game-count">Search this site's video list</span>
+      </div>
+      <div class="toolbar video-toolbar">
+        <label class="search-label" for="video-search">SEARCH VIDEOS</label>
+        <label class="search-wrap"><span aria-hidden="true">⌕</span><input id="video-search" type="search" placeholder="Search the featured videos…" autocomplete="off"></label>
+        <p class="search-hint">This searches videos already listed below. It does not open YouTube.</p>
+      </div>
+      <div id="video-list">
       <div class="section-heading">
         <div><p class="eyebrow">VIDEO LIBRARY</p><h2>Watch videos</h2></div>
         <span class="game-count">Featured video</span>
@@ -130,8 +115,8 @@
         </div>
         <div class="video-details">
           <h3>Featured YouTube video</h3>
-          <p>If the player does not load, the video may not allow embedding or YouTube may be restricted on this network.</p>
-          <a class="primary-button" href="https://www.youtube.com/watch?v=_c2e1NcI3Sc" target="_blank" rel="noopener noreferrer">Open on YouTube ↗</a>
+          <p>This video plays in the embedded player. If your school blocks its video provider, it may not load here.</p>
+          
         </div>
       </article>
       <article class="video-card">
@@ -147,7 +132,7 @@
         <div class="video-details">
           <h3>Video 2</h3>
           <p>If the player does not load, the video may not allow embedding or YouTube may be restricted on this network.</p>
-          <a class="primary-button" href="https://www.youtube.com/watch?v=h5pTl8fOM2U" target="_blank" rel="noopener noreferrer">Open on YouTube ↗</a>
+          
         </div>
       </article>
       <article class="video-card">
@@ -163,7 +148,7 @@
         <div class="video-details">
           <h3>Video 3</h3>
           <p>If the player does not load, the video may not allow embedding or YouTube may be restricted on this network.</p>
-          <a class="primary-button" href="https://www.youtube.com/watch?v=vrrzaaBcuko" target="_blank" rel="noopener noreferrer">Open on YouTube ↗</a>
+          
         </div>
       </article>
       <article class="video-card">
@@ -179,7 +164,7 @@
         <div class="video-details">
           <h3>Video 4</h3>
           <p>If the player does not load, the video may not allow embedding or YouTube may be restricted on this network.</p>
-          <a class="primary-button" href="https://www.youtube.com/watch?v=o1WhvZKUeKU" target="_blank" rel="noopener noreferrer">Open on YouTube ↗</a>
+          
         </div>
       </article>
       <article class="video-card">
@@ -195,7 +180,7 @@
         <div class="video-details">
           <h3>Video 5</h3>
           <p>If the player does not load, the video may not allow embedding or YouTube may be restricted on this network.</p>
-          <a class="primary-button" href="https://www.youtube.com/watch?v=piyk0iI9E6Q" target="_blank" rel="noopener noreferrer">Open on YouTube ↗</a>
+          
         </div>
       </article>
       <article class="video-card">
@@ -211,7 +196,7 @@
         <div class="video-details">
           <h3>Video 6</h3>
           <p>If the player does not load, the video may not allow embedding or YouTube may be restricted on this network.</p>
-          <a class="primary-button" href="https://www.youtube.com/watch?v=Gf50sIzpVWw" target="_blank" rel="noopener noreferrer">Open on YouTube ↗</a>
+          
         </div>
       </article>
     </section>
