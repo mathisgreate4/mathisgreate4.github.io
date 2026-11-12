@@ -158,3 +158,7 @@ body:before{background:radial-gradient(ellipse at 12% 8%,#c10d282e,transparent 3
 .reward-footnote{position:relative;z-index:1;margin:14px 0 0;color:#716b75;font-size:.65rem}
 @media(max-width:850px){.rewards-layout{grid-template-columns:1fr}.reward-shop{grid-template-columns:1fr}.shop-item{min-height:78px}}
 @media(max-width:500px){.rewards-section{padding:17px;margin-bottom:48px}.rewards-copy h2{font-size:3.3rem}.reward-stats{gap:18px}.reward-stat strong{font-size:1.4rem}.shop-heading{align-items:flex-start;flex-direction:column;gap:4px}.shop-item{padding:11px}.redeem-button{font-size:.55rem;padding:7px}}
+
+
+/* Prominent game search area */
+.search-label{display:block;color:#ff6673;font-size:.72rem;font-weight:950;letter-spacing:2px;margin-bottom:-8px}.search-wrap{width:100%;max-width:none;min-height:62px;padding:0 19px;border:1px solid #63303a;background:linear-gradient(110deg,#171016,#101015);box-shadow:0 8px 28px #0006}.search-wrap:focus-within{border-color:#ff3447;box-shadow:0 0 0 3px #ff303b20,0 0 32px #ff303b24}.search-wrap span{font-size:1.8rem}.search-wrap input{font-size:1rem}.search-wrap input::placeholder{color:#85818b}.search-hint{margin:-7px 0 0;color:#85818b;font-size:.76rem}
