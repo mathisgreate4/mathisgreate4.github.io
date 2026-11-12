@@ -7,7 +7,7 @@ const playerTitle = document.querySelector("#player-title");
 const newTabButton = document.querySelector("#new-tab-button");
 
 const GN_CATALOG_URL = "https://cdn.jsdelivr.net/gh/freebuisness/assets@latest/zones.json";
-const GN_GAME_BASE = "https://cdn.jsdelivr.net/gh/freebuisness/html@main/";
+const GN_GAME_BASE = "https://raw.githack.com/freebuisness/html/main/";
 const GN_COVER_BASE = "https://cdn.jsdelivr.net/gh/freebuisness/covers@main/";
 
 let games = [];
